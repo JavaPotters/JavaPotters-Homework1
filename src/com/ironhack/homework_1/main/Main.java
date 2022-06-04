@@ -1,8 +1,6 @@
 package com.ironhack.homework_1.main;
 
-import com.ironhack.homework_1.main.Clases.RandomParty;
-import com.ironhack.homework_1.main.Clases.Warrior;
-import com.ironhack.homework_1.main.Clases.Wizard;
+import com.ironhack.homework_1.main.Clases.*;
 
 import java.util.Scanner;
 
@@ -25,30 +23,32 @@ public class Main {
                     System.out.println("Has elegido crear una full party random");
                     System.out.println("Cuantos jugadores tiene cada equipo?");
                     int numMemberParty = scanner.nextInt();
-                    RandomParty team1 = new RandomParty(numMemberParty);
-                    RandomParty team2 = new RandomParty(numMemberParty);
+                    RandomParty teamRandom1 = new RandomParty(numMemberParty);
+                    RandomParty teamRandom2 = new RandomParty(numMemberParty);
                     break;
                 case 2:
                     System.out.println("Has elegido crear tu personaje");
                     System.out.println("Cuantos jugadores tiene cada equipo?");
                     numMemberParty = scanner.nextInt();
-                    team1 = new RandomParty(numMemberParty);
-                    team2 = new RandomParty(numMemberParty);
+                    CustomizedParty teamCustomized1 = new CustomizedParty(numMemberParty);
+                    CustomizedParty teamCustomized2 = new CustomizedParty(numMemberParty);
                     do{
                         System.out.println("Por favor seleccionar: \n" +
                                 "1. Si quieres crear un Wizard \n" +
                                 "2. Si quieres crear un Warrior \n" +
                                 "3.  Ya no quiero mas personajes");
                         option = scanner.nextInt();
-
+                    } while (option == 1 || option == 2);
                         switch(option){
                             case 1:
                                 System.out.println("Creando un mago");
                                 Wizard wizard = createCustomizedWizard();
+                                teamCustomized1.addWizard(wizard);
                                 break;
                             case 2:
                                 System.out.println("Creando un guerrero");
                                 Warrior warrior = createCustomizedWarrior();
+                                teamCustomized1.addWarrior(warrior);
                                 break;
                             case 3:
                                 System.out.println("Tu equipo esta completo");
@@ -56,8 +56,6 @@ public class Main {
                             default:
                                 System.out.println("Opcion erronea");
                         }
-                    } while (option == 1 || option == 2);
-
                     ///
                     break;
                 default:

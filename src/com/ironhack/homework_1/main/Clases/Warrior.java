@@ -14,7 +14,6 @@ public class Warrior extends Character implements Attacker {
         super(id, name, hp, isAlive);
         this.stamina = stamina;
         this.strength = strength;
-
     }
 
     public double getStamina() {
@@ -36,7 +35,6 @@ public class Warrior extends Character implements Attacker {
     @Override
     public double attack() {
         double damageAttack;
-
         if (stamina >= 5) {
              damageAttack = heavyAttack();
         }else {
@@ -48,16 +46,11 @@ public class Warrior extends Character implements Attacker {
     private double heavyAttack() {
         this.stamina = this.stamina- 5;
         return strength;
-
     }
     private double weakAttack() {
         this.stamina = this.stamina  + 1;
         BigDecimal strengthDecimal = new BigDecimal(String.valueOf(strength/2));
         double strengthHalf = strengthDecimal.setScale(1).doubleValue();
-
         return strengthHalf;
-
     }
-
-
 }

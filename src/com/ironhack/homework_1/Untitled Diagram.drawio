@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-06-04T15:42:09.521Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36 Edg/102.0.1245.33" etag="YI3A7CWBqLu0_tf-XcG7" version="19.0.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-06-04T15:45:16.666Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36 Edg/102.0.1245.33" etag="7PKwDEQ61-Co0H-aDP3n" version="19.0.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1151" dy="776" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -85,7 +85,10 @@
         <mxCell id="Xes6MF6YQogt8XBGIQ9O-7" value="create random propiedades" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="650" y="240" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Xes6MF6YQogt8XBGIQ9O-9" value="mostrar consola personajes" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Xes6MF6YQogt8XBGIQ9O-9" target="Xes6MF6YQogt8XBGIQ9O-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-9" value="mostrar consola personajes team 1" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1050" y="310" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Xes6MF6YQogt8XBGIQ9O-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Xes6MF6YQogt8XBGIQ9O-11" target="Xes6MF6YQogt8XBGIQ9O-14">
@@ -105,6 +108,44 @@
         </mxCell>
         <mxCell id="Xes6MF6YQogt8XBGIQ9O-14" value="for y warriors" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="700" y="460" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.433;entryY=0.05;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Xes6MF6YQogt8XBGIQ9O-19" target="Xes6MF6YQogt8XBGIQ9O-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-19" value="team 1 elegir personaje" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1060" y="380" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Xes6MF6YQogt8XBGIQ9O-20" target="Xes6MF6YQogt8XBGIQ9O-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-20" value="team 2 elegir personaje" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1060" y="570" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Xes6MF6YQogt8XBGIQ9O-22" target="Xes6MF6YQogt8XBGIQ9O-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-22" value="mostrar consola personajes team 2" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1060" y="500" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Xes6MF6YQogt8XBGIQ9O-26" target="Xes6MF6YQogt8XBGIQ9O-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-26" value="pelea" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1050" y="700" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Xes6MF6YQogt8XBGIQ9O-28" target="Xes6MF6YQogt8XBGIQ9O-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Xes6MF6YQogt8XBGIQ9O-28">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1460" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-28" value="sigue vive?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=12;align=center;strokeWidth=1;spacing=6;spacingTop=-4;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1290" y="520" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Xes6MF6YQogt8XBGIQ9O-32" value="mostrar cementerio" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1460" y="545" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -1,6 +1,10 @@
-package com.ironhack.homework_1.main;
+package com.ironhack.homework_1.main.Clases;
 
-public class Wizard extends Character implements Attacker{
+import com.ironhack.homework_1.main.Interface.Attacker;
+
+import java.math.BigDecimal;
+
+public class Wizard extends Character implements Attacker {
 
     private double mana;
     private double intelligence;
@@ -29,20 +33,28 @@ public class Wizard extends Character implements Attacker{
     }
 
     @Override
-    public void attack() {
+
+
+    public double attack() {
+        double damageAttack;
+
         if (mana >= 5) {
-            fireBall();
+            damageAttack = fireBall();
         }else {
-            staffHit();
+            damageAttack = staffHit();
         }
+        return damageAttack;
     }
 
-    private void fireBall() {
+    private double fireBall()  {
+        this.mana = this.mana- 5;
+        return intelligence;
 
     }
-    private void staffHit() {
+    private double staffHit() {
+        this.mana = this.mana  + 1;
+        return 2;
 
     }
-
 }
 

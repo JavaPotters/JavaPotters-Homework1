@@ -1,4 +1,4 @@
-package com.ironhack.homework_1.main;
+package com.ironhack.homework_1.main.Clases;
 
 public abstract class Character {
     private int id;

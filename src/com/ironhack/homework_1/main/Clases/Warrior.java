@@ -15,7 +15,7 @@ public class Warrior extends Character implements Attacker {
         this.strength = strength;
     }
 
-    public String getStamina() {
+    public double getStamina() {
         return stamina;
     }
 
@@ -23,7 +23,7 @@ public class Warrior extends Character implements Attacker {
         this.stamina = stamina;
     }
 
-    public String getStrength() {
+    public double getStrength() {
         return strength;
     }
 

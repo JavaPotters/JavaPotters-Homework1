@@ -13,7 +13,7 @@ public abstract class Character {
         this.isAlive = isAlive;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -29,7 +29,7 @@ public abstract class Character {
         this.name = name;
     }
 
-    public String getHp() {
+    public int getHp() {
         return hp;
     }
 

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Random {
 
     public static Wizard createRandomWizard() {
-        int id = (int)(Math.random());
+        int id = (int)(Math.random()*100);
         String name = "";
         int hp = (int)(Math.random()*(100-50)+50);
         double mana = (double) (Math.random()*(50-10)+10);
@@ -15,7 +15,7 @@ public class Random {
     }
 
     public static Warrior createRandomWarrior() {
-        int id = (int)(Math.random());
+        int id = (int)(Math.random()*100);
         String name = " ";
         int hp = (int)(Math.random()*(200-100)+100);
         double stamina = (double) (Math.random()*(50-10)+10);

@@ -14,7 +14,7 @@ public class Wizard extends Character implements Attacker {
 
     }
 
-    public String getMana() {
+    public double getMana() {
         return mana;
     }
 
@@ -22,7 +22,7 @@ public class Wizard extends Character implements Attacker {
         this.mana = mana;
     }
 
-    public String getIntelligence() {
+    public double getIntelligence() {
         return intelligence;
     }
 
@@ -53,6 +53,14 @@ public class Wizard extends Character implements Attacker {
         this.mana = this.mana  + 1;
         return 2;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Wizard{" +
+                "mana=" + mana +
+                ", intelligence=" + intelligence +
+                '}';
     }
 }
 

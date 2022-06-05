@@ -1,6 +1,7 @@
 package com.ironhack.homework_1.main;
 
 import com.ironhack.homework_1.main.Clases.*;
+import com.ironhack.homework_1.main.Clases.Character;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,17 +24,22 @@ public class Main {
             switch(option){
                 case 1:
                     System.out.println("Has elegido crear una full party random");
-                    System.out.println("Cuantos jugadores tiene cada equipo?");
+                    System.out.println("Cuantos jugadores entre 1-50 tiene cada equipo?");
                     int numMemberParty = scanner.nextInt();
+                        while (0>numMemberParty || numMemberParty>51){
+                            System.out.println("Ese numero no es valido \n Cuantos jugadores entre 1-50 tiene cada equipo?");
+                            numMemberParty = scanner.nextInt();
+                        }
                     RandomParty teamRandom1 = new RandomParty(numMemberParty);
                     RandomParty teamRandom2 = new RandomParty(numMemberParty);
+
                     break;
                 case 2:
                     System.out.println("Has elegido crear tu personaje");
-                    System.out.println("Cuantos jugadores tiene cada equipo?");
+                    System.out.println("Cuantos jugadores entre 1-50 tiene cada equipo?");
                     numMemberParty = scanner.nextInt();
-                    CustomizedParty teamCustomized1 = new CustomizedParty(numMemberParty);
-                    CustomizedParty teamCustomized2 = new CustomizedParty(numMemberParty);
+                    CustomizedParty teamCustomized1 = new CustomizedParty(numMemberParty*2);
+                    CustomizedParty teamCustomized2 = new CustomizedParty(numMemberParty*2);
                     do{
                         System.out.println("Por favor seleccionar: \n" +
                                 "1. Si quieres crear un Wizard \n" +
@@ -44,17 +50,17 @@ public class Main {
                         switch(option){
                             case 1:
                                 System.out.println("Creando un mago");
-                                Wizard wizard = createCustomizedWizard();
-                                teamCustomized1.addWizard(wizard);
+                                Character wizard = createCustomizedWizard();
+                                teamCustomized1.addWizard((Wizard) wizard);
                                 break;
                             case 2:
                                 System.out.println("Creando un guerrero");
-                                Warrior warrior = createCustomizedWarrior();
-                                teamCustomized1.addWarrior(warrior);
+                                Character warrior = createCustomizedWarrior();
+                                teamCustomized1.addWarrior((Warrior) warrior);
                                 break;
                             case 3:
                                 System.out.println("Tu equipo esta completo");
-                                System.out.println("Los jugadores de tu equipo son:" + );
+                                System.out.println("Los jugadores de tu equipo son:" + "");
                                 break;
                             default:
                                 System.out.println("Opcion erronea");
@@ -64,17 +70,29 @@ public class Main {
                 default:
                     System.out.println("Opcion erronea");
             }
+        List <Character> listaTotal = new ArrayList<>();
+            /*5/6 hemos realizado: listas para guardar personajes y para que aparezca por pantalla los personajes y sus atributos
+              Que queremos hacer proximamente: hacer lista general y lista esquipo 2 a partir de lista general restandole lista equipo 1
+              la lista general la queremos hacer para que el usuario elija a partir de ahi las dos listas.
+        * */
 
-        List<String> listaEquipo1 = new ArrayList<>();
-            listaEquipo1.add(createCustomizedWarrior().toString());
-            listaEquipo1.add(createCustomizedWizard().toString());
+        List<Character> listaGeneral = new ArrayList<>();
+            listaGeneral.add(createCustomizedWarrior());
+            listaGeneral.add(createCustomizedWizard());
 
-        for(int i = 0; i < listaEquipo1.size(); i++) {
-            System.out.println(listaEquipo1.get(i));
+        for(int i = 0; i < listaGeneral.size(); i++) {
+            System.out.println(listaGeneral.get(i));
         }
+        List<Character> listaEquipo2 = new ArrayList<>();
+        for (Character jugador : listaEquipo2) {
+            if (!ListaGeneral.contains(jugador)) {
+                newList.add(element);
+            }
+        }
+        System.out.println(newList);
 
         List<String> listaEquipo2 = new ArrayList<>();
-        listaEquipo2 = ;
+        listaEquipo2 = listaEquipo1 ;
 
 
             int ordenPersonajes;

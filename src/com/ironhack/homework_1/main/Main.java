@@ -65,7 +65,17 @@ public class Main {
                     System.out.println("Opcion erronea");
             }
 
-        List<String> listaEquipo1 = new ArrayList<>()
+        List<String> listaEquipo1 = new ArrayList<>();
+            listaEquipo1.add(createCustomizedWarrior().toString());
+            listaEquipo1.add(createCustomizedWizard().toString());
+
+        for(int i = 0; i < listaEquipo1.size(); i++) {
+            System.out.println(listaEquipo1.get(i));
+        }
+
+        List<String> listaEquipo2 = new ArrayList<>();
+        listaEquipo2 = ;
+
 
             int ordenPersonajes;
         System.out.println("Que comience la batalla \n ¿Qué jugador quieres que luche en primer lugar?" );

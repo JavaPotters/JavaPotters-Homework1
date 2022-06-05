@@ -1,7 +1,6 @@
 package com.ironhack.homework_1.main.Clases;
 
 import com.ironhack.homework_1.main.Interface.Attacker;
-import com.ironhack.homework_1.main.Main;
 
 import java.math.BigDecimal;
 
@@ -16,7 +15,7 @@ public class Warrior extends Character implements Attacker {
         this.strength = strength;
     }
 
-    public double getStamina() {
+    public String getStamina() {
         return stamina;
     }
 
@@ -24,7 +23,7 @@ public class Warrior extends Character implements Attacker {
         this.stamina = stamina;
     }
 
-    public double getStrength() {
+    public String getStrength() {
         return strength;
     }
 
@@ -52,5 +51,13 @@ public class Warrior extends Character implements Attacker {
         BigDecimal strengthDecimal = new BigDecimal(String.valueOf(strength/2));
         double strengthHalf = strengthDecimal.setScale(1).doubleValue();
         return strengthHalf;
+    }
+
+    @Override
+    public String toString() {
+        return "Warrior{" +
+                "stamina=" + stamina +
+                ", strength=" + strength +
+                '}';
     }
 }

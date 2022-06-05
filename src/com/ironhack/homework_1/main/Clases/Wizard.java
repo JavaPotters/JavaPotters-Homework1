@@ -2,8 +2,6 @@ package com.ironhack.homework_1.main.Clases;
 
 import com.ironhack.homework_1.main.Interface.Attacker;
 
-import java.math.BigDecimal;
-
 public class Wizard extends Character implements Attacker {
 
     private double mana;
@@ -16,7 +14,7 @@ public class Wizard extends Character implements Attacker {
 
     }
 
-    public double getMana() {
+    public String getMana() {
         return mana;
     }
 
@@ -24,7 +22,7 @@ public class Wizard extends Character implements Attacker {
         this.mana = mana;
     }
 
-    public double getIntelligence() {
+    public String getIntelligence() {
         return intelligence;
     }
 

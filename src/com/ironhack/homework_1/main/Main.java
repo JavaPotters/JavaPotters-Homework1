@@ -2,6 +2,8 @@ package com.ironhack.homework_1.main;
 
 import com.ironhack.homework_1.main.Clases.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import static com.ironhack.homework_1.main.Clases.Customized.*;
@@ -52,6 +54,7 @@ public class Main {
                                 break;
                             case 3:
                                 System.out.println("Tu equipo esta completo");
+                                System.out.println("Los jugadores de tu equipo son:" + );
                                 break;
                             default:
                                 System.out.println("Opcion erronea");
@@ -61,6 +64,13 @@ public class Main {
                 default:
                     System.out.println("Opcion erronea");
             }
+
+        List<String> listaEquipo1 = new ArrayList<>()
+
+            int ordenPersonajes;
+        System.out.println("Que comience la batalla \n ¿Qué jugador quieres que luche en primer lugar?" );
+        ordenPersonajes = scanner.nextInt();
+
 
         scanner.close();
     }

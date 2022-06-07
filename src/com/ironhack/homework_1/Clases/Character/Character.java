@@ -1,6 +1,6 @@
 package com.ironhack.homework_1.Clases.Character;
 
-public abstract class Character {
+public class Character {
     private int id;
     private String name;
     private int hp;

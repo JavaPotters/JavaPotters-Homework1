@@ -23,61 +23,73 @@ public class Main {
             option = scanner.nextInt();
         } while (option != 1 && option != 2);
 
+            int numMemberParty;
+            String nameTeam;
             switch(option){
                 case 1:
                     System.out.println("Has elegido crear una full party random");
-
                     System.out.println("Cuantos jugadores entre 1-5 tiene cada equipo?");
-                    int numMemberParty = scanner.nextInt();
-                    while (0>numMemberParty || numMemberParty>5){
+
+                    numMemberParty = scanner.nextInt();
+                    while (numMemberParty < 0 || numMemberParty > 5){
                         System.out.println("Ese numero no es valido \n Cuantos jugadores entre 1-5 tiene cada equipo?");
                         numMemberParty = scanner.nextInt();
-                }
+                    }
 
-                    RandomParty teamRandom1 = new RandomParty(numMemberParty);
-                    RandomParty teamRandom2 = new RandomParty(numMemberParty);
+                    System.out.println("Cual quieres que sea el nombre de tu equipo?");
+                    nameTeam = scanner.nextLine();
+
+                    RandomParty teamRandom1 = new RandomParty(numMemberParty, nameTeam);
                     break;
 
                 case 2:
                     System.out.println("Has elegido crear tu personaje");
-
-                    do{
-                        System.out.println("Cuantos jugadores entre 1-5 tiene cada equipo?");
-
+                    System.out.println("Cuantos jugadores entre 1-5 tiene cada equipo?");
+                    numMemberParty = scanner.nextInt();
+                    while (numMemberParty < 0 || numMemberParty > 5){
                         System.out.println("Ese numero no es valido \n Cuantos jugadores entre 1-5 tiene cada equipo?");
                         numMemberParty = scanner.nextInt();
-                    } while (0>numMemberParty || numMemberParty>6);
+                    }
 
-                    CustomizedParty teamCustomized1 = new CustomizedParty(numMemberParty);
-                    CustomizedParty teamCustomized2 = new CustomizedParty(numMemberParty);
+                    System.out.println("Cual quieres que sea el nombre de tu equipo?");
+                    nameTeam = scanner.nextLine();
 
-                    do{
+                    CustomizedParty teamCustomized1 = new CustomizedParty(numMemberParty, nameTeam);
+
+                    int currentNum = 0;
+
+                    while (currentNum< numMemberParty){
                         System.out.println("Por favor seleccionar: \n" +
                                 "1. Si quieres crear un Wizard \n" +
-                                "2. Si quieres crear un Warrior \n" +
-                                "3.  Ya no quiero mas personajes");
+                                "2. Si quieres crear un Warrior \n");
                         option = scanner.nextInt();
-                    } while (option == 1 || option == 2);
+                        while (option != 1 && option != 2){
+                            System.out.println("Numero invalido");
+                            System.out.println("Por favor seleccionar: \n" +
+                                    "1. Si quieres crear un Wizard \n" +
+                                    "2. Si quieres crear un Warrior \n");
+                            option = scanner.nextInt();
+                        }
                         switch(option){
                             case 1:
                                 System.out.println("Creando un mago");
                                 Character wizard = createCustomizedWizard();
                                 teamCustomized1.addWizard((Wizard) wizard);
+                                currentNum++;
                                 break;
                             case 2:
                                 System.out.println("Creando un guerrero");
                                 Character warrior = createCustomizedWarrior();
                                 teamCustomized1.addWarrior((Warrior) warrior);
-                                break;
-                            case 3:
-                                System.out.println("Tu equipo esta completo");
-                                System.out.println("Los jugadores de tu equipo son:" + "");
+                                currentNum++;
                                 break;
                             default:
                                 System.out.println("Opcion erronea");
+                                break;
                         }
-                    ///
-                    break;
+                        break;
+                    }
+
                 default:
                     System.out.println("Opcion erronea");
             }

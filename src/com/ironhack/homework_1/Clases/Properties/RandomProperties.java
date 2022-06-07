@@ -9,8 +9,8 @@ public class RandomProperties {
         int id = (int)(Math.random()*100);
         String name = "";
         int hp = (int)(Math.random()*(100-50)+50);
-        double mana = (double) (Math.random()*(50-10)+10);
-        double inteligence = (double) (Math.random()*(50-1)+1);
+        double mana = Math.round((double) (Math.random()*(50-10)+10));
+        double inteligence = Math.round((double) (Math.random()*(50-1)+1));
         Wizard wizard = new Wizard(id, name, hp, true, mana, inteligence);
         return wizard;
     }
@@ -19,8 +19,8 @@ public class RandomProperties {
         int id = (int)(Math.random()*100);
         String name = " ";
         int hp = (int)(Math.random()*(200-100)+100);
-        double stamina = (double) (Math.random()*(50-10)+10);
-        double strength = (double) (Math.random()*(10-1)+1);
+        double stamina = Math.round((double) (Math.random()*(50-10)+10));
+        double strength = Math.round((double) (Math.random()*(10-1)+1));
         Warrior warrior = new Warrior(id, name, hp, true, stamina, strength);
         return warrior;
     }

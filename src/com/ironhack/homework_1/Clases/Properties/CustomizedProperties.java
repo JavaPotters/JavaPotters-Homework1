@@ -18,14 +18,14 @@ public class CustomizedProperties {
         double mana = scanner.nextDouble();
         System.out.println("Por favor ingrese la inteligence");
         double inteligence = scanner.nextDouble();
+        scanner.close();
         Character wizard = new Wizard(id, name, hp, true, mana, inteligence);
         return wizard;
     }
 
     public static Character createCustomizedWarrior(){
-
-        int id = (int)(Math.random()*100);
         Scanner scanner = new Scanner(System.in);
+        int id = (int)(Math.random()*100);
         System.out.println("Por favor");
         String name = scanner.nextLine();
         System.out.println("Por favor ingrese los puntos de vida");
@@ -34,6 +34,7 @@ public class CustomizedProperties {
         double stamina = scanner.nextDouble();
         System.out.println("Por favor ingrese la strength");
         double strength = scanner.nextDouble();
+        scanner.close();
         Character warrior = new Warrior(id, name, hp, true, stamina, strength);
         return warrior;
     }

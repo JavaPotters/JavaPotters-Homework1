@@ -26,7 +26,7 @@ public class CustomizedProperties {
 
         int id = (int)(Math.random()*100);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Por favor ingrese el nombre del Warrior");
+        System.out.println("Por favor");
         String name = scanner.nextLine();
         System.out.println("Por favor ingrese los puntos de vida");
         int hp = scanner.nextInt();

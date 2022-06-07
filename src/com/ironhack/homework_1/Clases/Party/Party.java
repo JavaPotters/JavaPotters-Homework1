@@ -9,8 +9,8 @@ import java.util.List;
 public abstract class Party {
 
     int numMembersParty;
-    protected static List<Wizard> wizards = new ArrayList<Wizard>();
-    protected static List<Warrior> warriors = new ArrayList<Warrior>();
+    protected static List<Character> party1 = new ArrayList<Character>();
+    protected static List<Character> party2 = new ArrayList<Character>();
     int numWarriorsMax;
     int numWizardsMax;
     int numWarriorsCurrent = 0;

@@ -5,7 +5,6 @@ import com.ironhack.homework_1.Clases.Character.Warrior;
 import com.ironhack.homework_1.Clases.Character.Wizard;
 import com.ironhack.homework_1.Clases.Party.CustomizedParty;
 import com.ironhack.homework_1.Clases.Party.RandomParty;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -88,13 +87,13 @@ public class Main {
               y el equipo 2 se crea por el ordenador de forma random
         * */
 
-        List<Character> listaGeneral = new ArrayList<>();
+        /*List<Character> listaGeneral = new ArrayList<>();
             listaGeneral.add(createCustomizedWarrior());
             listaGeneral.add(createCustomizedWizard());
 
         for(int i = 0; i < listaGeneral.size(); i++) {
             System.out.println(listaGeneral.get(i));
-        }
+        }*/
        /* List<Character> listaEquipo2 = new ArrayList<>();
         for (Character jugador : listaEquipo2) {
             if (!ListaGeneral.contains(jugador)) {

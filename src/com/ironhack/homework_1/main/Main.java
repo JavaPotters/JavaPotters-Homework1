@@ -37,8 +37,9 @@ public class Main {
                     }
 
                     System.out.println("Cual quieres que sea el nombre de tu equipo?");
-                    nameTeam = scanner.nextLine();
+                    nameTeam = scanner.next();
 
+                    System.out.println("El nombre del Team 1 es: " + nameTeam);
                     RandomParty teamRandom1 = new RandomParty(numMemberParty, nameTeam);
                     break;
 
@@ -52,9 +53,11 @@ public class Main {
                     }
 
                     System.out.println("Cual quieres que sea el nombre de tu equipo?");
-                    nameTeam = scanner.nextLine();
+                    nameTeam = scanner.next();
 
+                    System.out.println("El nombre del Team 1 es: " + nameTeam);
                     CustomizedParty teamCustomized1 = new CustomizedParty(numMemberParty, nameTeam);
+
 
                     int currentNum = 0;
 
@@ -83,9 +86,6 @@ public class Main {
                                 teamCustomized1.addWarrior((Warrior) warrior);
                                 currentNum++;
                                 break;
-                            default:
-                                System.out.println("Opcion erronea");
-                                break;
                         }
                         break;
                     }
@@ -93,7 +93,7 @@ public class Main {
                 default:
                     System.out.println("Opcion erronea");
             }
-        List <Character> listaTotal = new ArrayList<>();
+
             /*5/6 hemos realizado: listas para guardar personajes y para que aparezca por pantalla los personajes y sus atributos
               Que queremos hacer proximamente: que el usuario cree el equipo 1 (elige si quiere equipo personalizado o random)
               y el equipo 2 se crea por el ordenador de forma random
@@ -118,9 +118,9 @@ public class Main {
         listaEquipo2 = listaEquipo1 ;*/
 
 
-            int ordenPersonajes;
+        int ordenPersonajes;
         System.out.println("Que comience la batalla \n ¿Qué jugador quieres que luche en primer lugar?" );
-        ordenPersonajes = scanner.nextInt();
+        //ordenPersonajes = scanner.nextInt();
 
 
         scanner.close();

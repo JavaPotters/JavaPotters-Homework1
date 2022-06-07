@@ -1,13 +1,16 @@
 package com.ironhack.homework_1.main;
 
-import com.ironhack.homework_1.main.Clases.*;
-import com.ironhack.homework_1.main.Clases.Character;
+import com.ironhack.homework_1.Clases.Character.Character;
+import com.ironhack.homework_1.Clases.Character.Warrior;
+import com.ironhack.homework_1.Clases.Character.Wizard;
+import com.ironhack.homework_1.Clases.Party.CustomizedParty;
+import com.ironhack.homework_1.Clases.Party.RandomParty;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.ironhack.homework_1.main.Clases.Customized.*;
+import static com.ironhack.homework_1.Clases.Properties.CustomizedProperties.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,22 +27,31 @@ public class Main {
             switch(option){
                 case 1:
                     System.out.println("Has elegido crear una full party random");
-                    System.out.println("Cuantos jugadores entre 1-50 tiene cada equipo?");
+
+                    System.out.println("Cuantos jugadores entre 1-5 tiene cada equipo?");
                     int numMemberParty = scanner.nextInt();
-                        while (0>numMemberParty || numMemberParty>51){
-                            System.out.println("Ese numero no es valido \n Cuantos jugadores entre 1-50 tiene cada equipo?");
-                            numMemberParty = scanner.nextInt();
-                        }
+                    while (0>numMemberParty || numMemberParty>5){
+                        System.out.println("Ese numero no es valido \n Cuantos jugadores entre 1-5 tiene cada equipo?");
+                        numMemberParty = scanner.nextInt();
+                }
+
                     RandomParty teamRandom1 = new RandomParty(numMemberParty);
                     RandomParty teamRandom2 = new RandomParty(numMemberParty);
-
                     break;
+
                 case 2:
                     System.out.println("Has elegido crear tu personaje");
-                    System.out.println("Cuantos jugadores entre 1-50 tiene cada equipo?");
-                    numMemberParty = scanner.nextInt();
-                    CustomizedParty teamCustomized1 = new CustomizedParty(numMemberParty*2);
-                    CustomizedParty teamCustomized2 = new CustomizedParty(numMemberParty*2);
+
+                    do{
+                        System.out.println("Cuantos jugadores entre 1-5 tiene cada equipo?");
+
+                        System.out.println("Ese numero no es valido \n Cuantos jugadores entre 1-5 tiene cada equipo?");
+                        numMemberParty = scanner.nextInt();
+                    } while (0>numMemberParty || numMemberParty>6);
+
+                    CustomizedParty teamCustomized1 = new CustomizedParty(numMemberParty);
+                    CustomizedParty teamCustomized2 = new CustomizedParty(numMemberParty);
+
                     do{
                         System.out.println("Por favor seleccionar: \n" +
                                 "1. Si quieres crear un Wizard \n" +
@@ -72,8 +84,8 @@ public class Main {
             }
         List <Character> listaTotal = new ArrayList<>();
             /*5/6 hemos realizado: listas para guardar personajes y para que aparezca por pantalla los personajes y sus atributos
-              Que queremos hacer proximamente: hacer lista general y lista esquipo 2 a partir de lista general restandole lista equipo 1
-              la lista general la queremos hacer para que el usuario elija a partir de ahi las dos listas.
+              Que queremos hacer proximamente: que el usuario cree el equipo 1 (elige si quiere equipo personalizado o random)
+              y el equipo 2 se crea por el ordenador de forma random
         * */
 
         List<Character> listaGeneral = new ArrayList<>();
@@ -83,7 +95,7 @@ public class Main {
         for(int i = 0; i < listaGeneral.size(); i++) {
             System.out.println(listaGeneral.get(i));
         }
-        List<Character> listaEquipo2 = new ArrayList<>();
+       /* List<Character> listaEquipo2 = new ArrayList<>();
         for (Character jugador : listaEquipo2) {
             if (!ListaGeneral.contains(jugador)) {
                 newList.add(element);
@@ -92,7 +104,7 @@ public class Main {
         System.out.println(newList);
 
         List<String> listaEquipo2 = new ArrayList<>();
-        listaEquipo2 = listaEquipo1 ;
+        listaEquipo2 = listaEquipo1 ;*/
 
 
             int ordenPersonajes;

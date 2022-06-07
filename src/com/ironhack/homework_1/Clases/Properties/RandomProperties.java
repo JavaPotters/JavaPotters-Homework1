@@ -1,8 +1,9 @@
-package com.ironhack.homework_1.main.Clases;
+package com.ironhack.homework_1.Clases.Properties;
 
-import java.util.Scanner;
+import com.ironhack.homework_1.Clases.Character.Warrior;
+import com.ironhack.homework_1.Clases.Character.Wizard;
 
-public class Random {
+public class RandomProperties {
 
     public static Wizard createRandomWizard() {
         int id = (int)(Math.random()*100);

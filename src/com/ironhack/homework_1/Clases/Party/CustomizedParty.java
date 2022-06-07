@@ -1,6 +1,7 @@
-package com.ironhack.homework_1.main.Clases;
+package com.ironhack.homework_1.Clases.Party;
 
-import java.util.Scanner;
+import com.ironhack.homework_1.Clases.Character.Warrior;
+import com.ironhack.homework_1.Clases.Character.Wizard;
 
 public class CustomizedParty extends Party {
 

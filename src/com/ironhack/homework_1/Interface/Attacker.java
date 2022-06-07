@@ -1,4 +1,4 @@
-package com.ironhack.homework_1.main.Interface;
+package com.ironhack.homework_1.Interface;
 
 public interface Attacker {
 

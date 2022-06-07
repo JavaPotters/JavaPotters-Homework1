@@ -1,6 +1,6 @@
-package com.ironhack.homework_1.main.Clases;
+package com.ironhack.homework_1.Clases.Character;
 
-import com.ironhack.homework_1.main.Interface.Attacker;
+import com.ironhack.homework_1.Interface.Attacker;
 
 import java.math.BigDecimal;
 

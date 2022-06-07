@@ -1,8 +1,12 @@
-package com.ironhack.homework_1.main.Clases;
+package com.ironhack.homework_1.Clases.Properties;
+
+import com.ironhack.homework_1.Clases.Character.Character;
+import com.ironhack.homework_1.Clases.Character.Warrior;
+import com.ironhack.homework_1.Clases.Character.Wizard;
 
 import java.util.Scanner;
 
-public class Customized {
+public class CustomizedProperties {
     public static Character createCustomizedWizard(){
         int id = (int)(Math.random()*100);
         Scanner scanner = new Scanner(System.in);

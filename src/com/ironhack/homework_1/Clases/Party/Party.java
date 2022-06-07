@@ -1,4 +1,7 @@
-package com.ironhack.homework_1.main.Clases;
+package com.ironhack.homework_1.Clases.Party;
+
+import com.ironhack.homework_1.Clases.Character.Warrior;
+import com.ironhack.homework_1.Clases.Character.Wizard;
 
 import java.util.ArrayList;
 import java.util.List;

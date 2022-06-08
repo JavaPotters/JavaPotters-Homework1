@@ -4,6 +4,7 @@ import com.ironhack.homework_1.Clases.Character.Character;
 import com.ironhack.homework_1.Clases.Character.Warrior;
 import com.ironhack.homework_1.Clases.Character.Wizard;
 import com.ironhack.homework_1.Clases.Party.CustomizedParty;
+import com.ironhack.homework_1.Clases.Party.Party;
 import com.ironhack.homework_1.Clases.Party.RandomParty;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,8 @@ public class Main {
 
             int numMemberParty;
             String nameTeam;
+            Party team1;
+            Party team2;
             switch(option){
                 case 1:
                     System.out.println("Has elegido crear una full party random");
@@ -36,11 +39,14 @@ public class Main {
                         numMemberParty = scanner.nextInt();
                     }
 
-                    System.out.println("Cual quieres que sea el nombre de tu equipo?");
-                    nameTeam = scanner.next();
+                    for (int i = 1; i<= 2; i++){
+                        System.out.println("¿Cual quieres que sea el nombre del equipo "+ i+ "?");
+                        nameTeam = scanner.next();
 
-                    System.out.println("El nombre del Team 1 es: " + nameTeam);
-                    RandomParty teamRandom1 = new RandomParty(numMemberParty, nameTeam);
+                        System.out.println("El nombre del Team es: " + nameTeam);
+                        //RandomParty ´´teamRandom {nameTeam}´´ = new RandomParty(numMemberParty, nameTeam);
+                    }
+
                     break;
 
                 case 2:
@@ -118,9 +124,15 @@ public class Main {
         listaEquipo2 = listaEquipo1 ;*/
 
 
-        int ordenPersonajes;
+        //int ordenPersonajes;
         System.out.println("Que comience la batalla \n ¿Qué jugador quieres que luche en primer lugar?" );
-        //ordenPersonajes = scanner.nextInt();
+        while(){
+
+        }
+        for (int i = 1; i<= 2; i++){
+            int idPersonaje = scanner.nextInt();
+        }
+
 
 
         scanner.close();

@@ -10,8 +10,8 @@ public class RandomProperties {
         String name = "";
         int hp = (int)(Math.random()*(100-50)+50);
         double mana = Math.round((double) (Math.random()*(50-10)+10));
-        double inteligence = Math.round((double) (Math.random()*(50-1)+1));
-        Wizard wizard = new Wizard(id, name, hp, true, mana, inteligence);
+        double intelligence = Math.round((double) (Math.random()*(50-1)+1));
+        Wizard wizard = new Wizard(id, name, hp, true, mana, intelligence);
         return wizard;
     }
 

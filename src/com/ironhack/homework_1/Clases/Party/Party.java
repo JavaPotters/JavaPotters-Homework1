@@ -39,6 +39,16 @@ public abstract class Party {
         }
     }
 
+    public void deleteCharacter(Character character){
+        if(party.size()< numMembersParty){
+            party.remove(character);
+            numMembersParty--;
+        }
+        else {
+            System.out.println("Party llena");
+        }
+    }
+
     public void printParty(){
         for(Character i: party){
             i.toString();

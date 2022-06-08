@@ -4,15 +4,57 @@ import com.ironhack.homework_1.Clases.Character.Character;
 import com.ironhack.homework_1.Clases.Character.Warrior;
 import com.ironhack.homework_1.Clases.Character.Wizard;
 import com.ironhack.homework_1.Clases.Party.CustomizedParty;
+import com.ironhack.homework_1.Clases.Party.Party;
 import com.ironhack.homework_1.Clases.Party.RandomParty;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 import static com.ironhack.homework_1.Clases.Properties.CustomizedProperties.*;
 
 public class Main {
-    public static void main(String[] args) {
+
+    /*
+    // To read the CSV File we'll need to create:
+    public static final String SEPARATOR=";";
+    public static final String QUOTE="\"";
+
+     */
+
+    public static void main(String[] args) throws IOException {
+
+        // Code to read the CSV File
+
+        /*
+        BufferedReader br = null;
+
+        try {
+
+            br =new BufferedReader(new FileReader("unit1/characters.csv"));
+            String line = br.readLine();
+            while (null!=line) {
+                String [] fields = line.split(SEPARATOR);
+                System.out.println(Arrays.toString(fields));
+
+                line = br.readLine();
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if (null!=br) {
+                br.close();
+            }
+        }
+
+         */
+
+        // Aquí comienza el juego:
         Scanner scanner = new Scanner(System.in);
 
         int option;
@@ -25,6 +67,8 @@ public class Main {
 
             int numMemberParty;
             String nameTeam;
+            //Party team1;
+            Party team2;
             switch(option){
                 case 1:
                     System.out.println("Has elegido crear una full party random");
@@ -36,11 +80,15 @@ public class Main {
                         numMemberParty = scanner.nextInt();
                     }
 
-                    System.out.println("Cual quieres que sea el nombre de tu equipo?");
-                    nameTeam = scanner.next();
+                    //for (int i = 1; i<= 2; i++){
+                        System.out.println("¿Cual quieres que sea el nombre del equipo ?");
+                        nameTeam = scanner.next();
+                        //String team = "team" + i.toString();
 
-                    System.out.println("El nombre del Team 1 es: " + nameTeam);
-                    RandomParty teamRandom1 = new RandomParty(numMemberParty, nameTeam);
+                        System.out.println("El nombre del Team es: " + nameTeam);
+                        Party team1 = new RandomParty(numMemberParty, nameTeam);
+                    //}
+
                     break;
 
                 case 2:
@@ -118,9 +166,15 @@ public class Main {
         listaEquipo2 = listaEquipo1 ;*/
 
 
-        int ordenPersonajes;
+        //int ordenPersonajes;
         System.out.println("Que comience la batalla \n ¿Qué jugador quieres que luche en primer lugar?" );
-        //ordenPersonajes = scanner.nextInt();
+        //while(){
+
+        //}
+        //for (int i = 1; i<= 2; i++){
+        //    int idPersonaje = scanner.nextInt();
+        //}
+
 
 
         scanner.close();

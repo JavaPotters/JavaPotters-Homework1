@@ -67,7 +67,7 @@ public class Main {
 
             int numMemberParty;
             String nameTeam;
-            Party team1;
+            //Party team1;
             Party team2;
             switch(option){
                 case 1:
@@ -80,13 +80,14 @@ public class Main {
                         numMemberParty = scanner.nextInt();
                     }
 
-                    for (int i = 1; i<= 2; i++){
-                        System.out.println("¿Cual quieres que sea el nombre del equipo "+ i+ "?");
+                    //for (int i = 1; i<= 2; i++){
+                        System.out.println("¿Cual quieres que sea el nombre del equipo ?");
                         nameTeam = scanner.next();
+                        //String team = "team" + i.toString();
 
                         System.out.println("El nombre del Team es: " + nameTeam);
-                        //RandomParty ´´teamRandom {nameTeam}´´ = new RandomParty(numMemberParty, nameTeam);
-                    }
+                        Party team1 = new RandomParty(numMemberParty, nameTeam);
+                    //}
 
                     break;
 
@@ -167,12 +168,12 @@ public class Main {
 
         //int ordenPersonajes;
         System.out.println("Que comience la batalla \n ¿Qué jugador quieres que luche en primer lugar?" );
-        while(){
+        //while(){
 
-        }
-        for (int i = 1; i<= 2; i++){
-            int idPersonaje = scanner.nextInt();
-        }
+        //}
+        //for (int i = 1; i<= 2; i++){
+        //    int idPersonaje = scanner.nextInt();
+        //}
 
 
 

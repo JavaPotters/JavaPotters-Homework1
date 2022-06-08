@@ -5,14 +5,55 @@ import com.ironhack.homework_1.Clases.Character.Warrior;
 import com.ironhack.homework_1.Clases.Character.Wizard;
 import com.ironhack.homework_1.Clases.Party.CustomizedParty;
 import com.ironhack.homework_1.Clases.Party.RandomParty;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 import static com.ironhack.homework_1.Clases.Properties.CustomizedProperties.*;
 
 public class Main {
-    public static void main(String[] args) {
+
+    /*
+    // To read the CSV File we'll need to create:
+    public static final String SEPARATOR=";";
+    public static final String QUOTE="\"";
+
+     */
+
+    public static void main(String[] args) throws IOException {
+
+        // Code to read the CSV File
+
+        /*
+        BufferedReader br = null;
+
+        try {
+
+            br =new BufferedReader(new FileReader("unit1/characters.csv"));
+            String line = br.readLine();
+            while (null!=line) {
+                String [] fields = line.split(SEPARATOR);
+                System.out.println(Arrays.toString(fields));
+
+                line = br.readLine();
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if (null!=br) {
+                br.close();
+            }
+        }
+
+         */
+
+        // Aquí comienza el juego:
         Scanner scanner = new Scanner(System.in);
 
         int option;

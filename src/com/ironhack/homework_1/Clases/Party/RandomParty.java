@@ -11,19 +11,17 @@ public class RandomParty extends Party{
 
         for(int i=0; i<numWarriorsMax; i++){
             Warrior warrior = RandomProperties.createRandomWarrior();
-            //System.out.println("Warrior pepe");
             addWarrior(warrior);
-            warrior.toString();
+            //warrior.toString();
         }
 
         for(int i=0; i<numWizardsMax; i++){
             Wizard wizard = RandomProperties.createRandomWizard();
-            //System.out.println("wizard juan");
             addWizard(wizard);
-            wizard.toString();
+            //wizard.toString();
         }
+        System.out.println("Random party creada exitosamente");
 
-        //Ahora queremos guardar a estos personajes a la lista
     }
 
 

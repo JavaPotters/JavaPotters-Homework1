@@ -55,19 +55,21 @@ public class Main {
          */
 
         // Aquí comienza el juego:
+        System.out.println("Bienevenido al ... de JavaPotters");
         Scanner scanner = new Scanner(System.in);
 
         int option;
         do{
             System.out.println("Por favor seleccionar: \n" +
                     "1. Si quieres una full party random \n" +
-                    "2. Si crear tu propio personaje \n");
+                    "2. Si quieres crear tus propios personajes \n");
             option = scanner.nextInt();
         } while (option != 1 && option != 2);
 
             int numMemberParty;
-            String nameTeam;
-            //Party team1;
+            String nameTeam1;
+            String nameTeam2;
+            Party team1;
             Party team2;
             switch(option){
                 case 1:
@@ -80,19 +82,25 @@ public class Main {
                         numMemberParty = scanner.nextInt();
                     }
 
-                    //for (int i = 1; i<= 2; i++){
-                        System.out.println("¿Cual quieres que sea el nombre del equipo ?");
-                        nameTeam = scanner.next();
-                        //String team = "team" + i.toString();
+                    // Team 1 -------------------------------------------
+                    System.out.println("¿Cual quieres que sea el nombre del equipo 1?");
+                    nameTeam1 = scanner.next();
+                    System.out.println("El nombre del Team 1 es: " + nameTeam1);
+                    team1 = new RandomParty(numMemberParty, nameTeam1);
+                    team1.printParty();
 
-                        System.out.println("El nombre del Team es: " + nameTeam);
-                        Party team1 = new RandomParty(numMemberParty, nameTeam);
-                    //}
+                    // Team 2 -------------------------------------------
+                    System.out.println("¿Cual quieres que sea el nombre del equipo 2?");
+                    nameTeam2 = scanner.next();
+                    System.out.println("El nombre del Team 2 es: " + nameTeam2);
+                    team2 = new RandomParty(numMemberParty, nameTeam2);
+                    team2.printParty();
 
+                    scanner.close();
                     break;
 
                 case 2:
-                    System.out.println("Has elegido crear tu personaje");
+                    System.out.println("Has elegido crear tus propios personajes!");
                     System.out.println("Cuantos jugadores entre 1-5 tiene cada equipo?");
                     numMemberParty = scanner.nextInt();
                     while (numMemberParty < 0 || numMemberParty > 5){
@@ -100,84 +108,100 @@ public class Main {
                         numMemberParty = scanner.nextInt();
                     }
 
-                    System.out.println("Cual quieres que sea el nombre de tu equipo?");
-                    nameTeam = scanner.next();
+                    // Team 1 -------------------------------------------
+                    System.out.println("¿Cual quieres que sea el nombre del equipo 1?");
+                    nameTeam1 = scanner.next();
+                    System.out.println("El nombre del Team 1 es: " + nameTeam1);
+                    team1 = new CustomizedParty(numMemberParty, nameTeam1);
 
-                    System.out.println("El nombre del Team 1 es: " + nameTeam);
-                    CustomizedParty teamCustomized1 = new CustomizedParty(numMemberParty, nameTeam);
-
-
-                    int currentNum = 0;
-
-                    while (currentNum< numMemberParty){
+                    for(int i = 1; i <= numMemberParty; i++){
+                        Scanner scanner2 = new Scanner(System.in);
                         System.out.println("Por favor seleccionar: \n" +
                                 "1. Si quieres crear un Wizard \n" +
                                 "2. Si quieres crear un Warrior \n");
-                        option = scanner.nextInt();
+                        option = scanner2.nextInt();
                         while (option != 1 && option != 2){
                             System.out.println("Numero invalido");
                             System.out.println("Por favor seleccionar: \n" +
                                     "1. Si quieres crear un Wizard \n" +
                                     "2. Si quieres crear un Warrior \n");
-                            option = scanner.nextInt();
-                        }
-                        switch(option){
+                            option = scanner2.nextInt();
+                        }switch(option){
                             case 1:
-                                System.out.println("Creando un mago");
+                                System.out.println("Creando un mago...");
                                 Character wizard = createCustomizedWizard();
-                                teamCustomized1.addWizard((Wizard) wizard);
-                                currentNum++;
+                                team1.addWizard((Wizard) wizard);
+                                System.out.println("Mago creado exitosamente!");
                                 break;
                             case 2:
-                                System.out.println("Creando un guerrero");
+                                System.out.println("Creando un guerrero...");
                                 Character warrior = createCustomizedWarrior();
-                                teamCustomized1.addWarrior((Warrior) warrior);
-                                currentNum++;
+                                team1.addWarrior((Warrior) warrior);
+                                System.out.println("Guerrero creado exitosamente!");
+                                break;
+                            }
+
+                        System.out.println("Numero de personajes creados: " +i+ "    Numero total del equipo: "+numMemberParty);
+                        }
+                    System.out.println("La party del team "+nameTeam1+" se ha creado exitosamante");
+                    team1.printParty();
+
+                    // Team 2 -------------------------------------------
+                    System.out.println("¿Cual quieres que sea el nombre del equipo 2?");
+                    nameTeam2 = scanner.next();
+                    System.out.println("El nombre del Team 2 es: " + nameTeam2);
+                    team2 = new CustomizedParty(numMemberParty, nameTeam2);
+
+                    for(int i = 1; i <= numMemberParty; i++){
+                        Scanner scanner2 = new Scanner(System.in);
+                        System.out.println("Por favor seleccionar: \n" +
+                                "1. Si quieres crear un Wizard \n" +
+                                "2. Si quieres crear un Warrior \n");
+                        option = scanner2.nextInt();
+                        while (option != 1 && option != 2){
+                            System.out.println("Numero invalido");
+                            System.out.println("Por favor seleccionar: \n" +
+                                    "1. Si quieres crear un Wizard \n" +
+                                    "2. Si quieres crear un Warrior \n");
+                            option = scanner2.nextInt();
+                        }switch(option){
+                            case 1:
+                                System.out.println("Creando un mago...");
+                                Character wizard = createCustomizedWizard();
+                                team2.addWizard((Wizard) wizard);
+                                System.out.println("Mago creado exitosamente!");
+                                break;
+                            case 2:
+                                System.out.println("Creando un guerrero...");
+                                Character warrior = createCustomizedWarrior();
+                                team2.addWarrior((Warrior) warrior);
+                                System.out.println("Guerrero creado exitosamente!");
                                 break;
                         }
-                        break;
+
+                        System.out.println("Numero de personajes creados: " +i+ "    Numero total del equipo: "+numMemberParty);
                     }
+                    System.out.println("La party del team "+nameTeam2+" se ha creado exitosamante");
+                    team2.printParty();
 
+
+                    break;
                 default:
-                    System.out.println("Opcion erronea");
+                    team1 = new RandomParty(5, "Random Team 1");
+                    team2 = new RandomParty(5, "Random Team 2");
             }
 
-            /*5/6 hemos realizado: listas para guardar personajes y para que aparezca por pantalla los personajes y sus atributos
-              Que queremos hacer proximamente: que el usuario cree el equipo 1 (elige si quiere equipo personalizado o random)
-              y el equipo 2 se crea por el ordenador de forma random
-        * */
-
-        /*List<Character> listaGeneral = new ArrayList<>();
-            listaGeneral.add(createCustomizedWarrior());
-            listaGeneral.add(createCustomizedWizard());
-
-        for(int i = 0; i < listaGeneral.size(); i++) {
-            System.out.println(listaGeneral.get(i));
-        }*/
-       /* List<Character> listaEquipo2 = new ArrayList<>();
-        for (Character jugador : listaEquipo2) {
-            if (!ListaGeneral.contains(jugador)) {
-                newList.add(element);
-            }
+        System.out.println("Que comience la batalla" );
+        while(team1.isTeamLive() && team2.isTeamLive()){
+            System.out.println("¿Qué jugador quieres que luche en primer lugar para el equipo 1? Por favor ingresa el id" );
         }
-        System.out.println(newList);
-
-        List<String> listaEquipo2 = new ArrayList<>();
-        listaEquipo2 = listaEquipo1 ;*/
-
-
-        //int ordenPersonajes;
-        System.out.println("Que comience la batalla \n ¿Qué jugador quieres que luche en primer lugar?" );
-        //while(){
-
-        //}
         //for (int i = 1; i<= 2; i++){
         //    int idPersonaje = scanner.nextInt();
         //}
 
 
 
-        scanner.close();
+
     }
 
 

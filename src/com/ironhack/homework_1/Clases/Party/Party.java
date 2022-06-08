@@ -12,11 +12,15 @@ public abstract class Party {
     int numMembersParty;
     protected static List<Character> party;
     private String nameParty;
+    private boolean teamLive;
 
     public Party(int numMembersParty, String nameParty) {
         this.numMembersParty = numMembersParty;
         this.nameParty = nameParty;
         party = new ArrayList<Character>();
+        if(numMembersParty>=0){
+            setTeamLive(true);
+        }
     }
 
     public void addWizard(Wizard wizard){
@@ -43,10 +47,21 @@ public abstract class Party {
         if(party.size()< numMembersParty){
             party.remove(character);
             numMembersParty--;
+            if(numMembersParty<=0){
+                setTeamLive(false);
+            }
         }
         else {
             System.out.println("Party llena");
         }
+    }
+
+    public boolean isTeamLive() {
+        return teamLive;
+    }
+
+    public void setTeamLive(boolean teamLive) {
+        this.teamLive = teamLive;
     }
 
     public void printParty(){

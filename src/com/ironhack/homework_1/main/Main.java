@@ -32,8 +32,8 @@ public class Main {
         int numMemberParty;
         String nameTeam1 = "";
         String nameTeam2 = "";
-        Party team1;
-        Party team2;
+        Party team1 = null;
+        Party team2 = null;
 
         int option;
         do{
@@ -62,7 +62,7 @@ public class Main {
                     System.out.println("The name of the team 1 is: " + nameTeam1);
                     team1 = new RandomParty(numMemberParty, nameTeam1);
                     team1.printParty();
-                    System.out.println("id team 1 ->"+team1.getPartyID());                    ;
+                    //System.out.println("id team 1 ->"+team1.getPartyID());                    ;
 
                     // Team 2 -------------------------------------------
                     System.out.println(("What do you want your team 2 to be called?"));
@@ -70,7 +70,7 @@ public class Main {
                     System.out.println("The name of the team 2 is: " + nameTeam2);
                     team2 = new RandomParty(numMemberParty, nameTeam2);
                     team2.printParty();
-                    System.out.println("id team 2 ->"+team2.getPartyID());
+                    //System.out.println("id team 2 ->"+team2.getPartyID());
 
                     //scanner.close();
                     break;
@@ -174,8 +174,9 @@ public class Main {
                     /*
 
                     CsvReader lectorCSV = new CsvReader();
-                    lectorCSV.readCSV(nameTeam1, nameTeam2, pathFile);
+                    lectorCSV.readCSV(nameTeam1, nameTeam2, pathFile);*/
 
+                    break;
                 default:
                     team1 = new RandomParty(5, "Random Team 1");
                     team2 = new RandomParty(5, "Random Team 2");
@@ -185,7 +186,7 @@ public class Main {
 
         System.out.println("Let the battle begin!" );
 
-        System.out.println("---------------Team 1 ------------------");
+        /*System.out.println("---------------Team 1 ------------------");
         team1.printParty();
         System.out.println("id team 1 ->"+team1.getPartyID());
         System.out.println("name team 1 ->"+team1.getNameParty());
@@ -193,8 +194,10 @@ public class Main {
         System.out.println("---------------Team 2 ------------------");
         team2.printParty();
         System.out.println("id team 2 ->"+team2.getPartyID());
-        System.out.println("name team 2 ->"+team2.getNameParty());
+        System.out.println("name team 2 ->"+team2.getNameParty());*/
 
+        System.out.println(team1.getNumMembersParty());
+        System.out.println(team2.getNumMembersParty());
         while(team1.isTeamLive() && team2.isTeamLive()){
             //Scanner scanner = new Scanner(System.in);
 
@@ -224,35 +227,53 @@ public class Main {
                 character2 = team2.getCharacter(id2);
             }
 
+            int numPelea = 1;
+            int numBatalla = 1;
 
             //Pelea-------------
-            while (character1.isAlive() || character2.isAlive()){
+            while (character1.isAlive() && character2.isAlive()){
                 double attack1 = character1.attack();
                 double attack2 = character2.attack();
 
+                System.out.println(character1.getName()+" ha atacado con una fuerza de " + attack1 + " puntos a "+
+                                character2.getName());
+                System.out.println(character2.getName()+" ha atacado con una fuerza de " + attack2 + " puntos a "+
+                        character1.getName());
+
                 character1.setHp(character1.getHp()-attack2);
                 character2.setHp(character2.getHp()-attack1);
+                System.out.println(character1.getName()+" tiene " + character1.getHp() + " HealtPoints.");
+                System.out.println(character2.getName()+" tiene "  + character2.getHp() + " HealtPoints.");
+                System.out.println("--------END FITGH N."+numPelea+"-------------");
+                numPelea++;
             }
 
             if (!character1.isAlive() && !character2.isAlive()){
                 team1.deleteCharacter(character1);
                 team2.deleteCharacter(character2);
-                System.out.println("Characters 1 and 2 are dead. both teams have lost");
+                System.out.println(character1.getName()+" and "+character2.getName()+
+                        " are dead. Both teams have lost");
             } else if(!character1.isAlive()){
                 team1.deleteCharacter(character1);
-                System.out.println("Character 1 is dead. Team 1 has lost :( \n"
-                        + nameTeam2 +" is the winner of this battle");
+                System.out.println(character1.getName()+" is dead. Team 1 has lost :( \n"
+                        + nameTeam2 +" is the winner of this battle!");
             } else if(!character2.isAlive()){
                 team2.deleteCharacter(character2);
-                System.out.println("Character 2 is dead. Team 2 has lost :( \n"
-                        + nameTeam1 +" is the winner of this battle");
+                System.out.println(character1.getName()+" is dead. Team 2 has lost :( \n"
+                        + nameTeam1 +" is the winner of this battle!");
             }
+            System.out.println("* * * * * * * * * * * END OF BATTLE "+numBatalla+"* * * * * * * * * * *\n");
+            System.out.println("Team 1 is alive? "+ team1.isTeamLive() + ". Number of member: "+ team1.getNumMembersParty());
+            System.out.println("team 2 is alive? "+ team2.isTeamLive()+ ". Number of member: "+ team2.getNumMembersParty());
+            numBatalla++;
 
         }
 
         scanner.close();
+        System.out.println("* * * * * * * * * * * GAME OVER * * * * * * * * * * *\n");
 
     }
+
 
 
 }

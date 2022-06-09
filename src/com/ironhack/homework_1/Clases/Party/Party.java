@@ -10,7 +10,7 @@ import java.util.List;
 public abstract class Party {
 
     private int numMembersParty;
-    private static List<Character> listCharacter;
+    private List<Character> listCharacter;
     private String nameParty;
     private boolean teamLive;
     private int partyID;
@@ -28,7 +28,6 @@ public abstract class Party {
     public void addWizard(Wizard wizard){
         if(this.listCharacter.size()< numMembersParty){
             this.listCharacter.add(wizard);
-            numMembersParty++;
         }
         else {
             System.out.println("Party llena");
@@ -38,7 +37,6 @@ public abstract class Party {
     public void addWarrior(Warrior warrior){
         if(this.listCharacter.size()< numMembersParty){
             this.listCharacter.add(warrior);
-            numMembersParty++;
         }
         else {
             System.out.println("Party llena");
@@ -46,15 +44,10 @@ public abstract class Party {
     }
 
     public void deleteCharacter(Character character){
-        if(this.listCharacter.size()< numMembersParty){
-            this.listCharacter.remove(character);
-            numMembersParty--;
-            if(numMembersParty<=0){
-                setTeamLive(false);
-            }
-        }
-        else {
-            System.out.println("Party llena");
+        this.listCharacter.remove(character);
+        numMembersParty--;
+        if(numMembersParty<=0){
+            setTeamLive(false);
         }
     }
 
@@ -98,5 +91,13 @@ public abstract class Party {
 
     public Party(String nameParty) {
         this.nameParty = nameParty;
+    }
+
+    public int getNumMembersParty() {
+        return numMembersParty;
+    }
+
+    public void setNumMembersParty(int numMembersParty) {
+        this.numMembersParty = numMembersParty;
     }
 }

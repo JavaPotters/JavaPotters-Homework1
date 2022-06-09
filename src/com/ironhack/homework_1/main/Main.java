@@ -72,7 +72,7 @@ public class Main {
                     team2 = new RandomParty(numMemberParty, nameTeam2);
                     team2.printParty();
 
-                    scanner.close();
+                    //scanner.close();
                     break;
 
                 case 2:
@@ -160,15 +160,23 @@ public class Main {
                     System.out.println(("The "+nameTeam2+" team's party has been successfully created"));
                     team2.printParty();
 
-
                     break;
                 default:
                     team1 = new RandomParty(5, "Random Team 1");
                     team2 = new RandomParty(5, "Random Team 2");
+                    break;
+
             }
 
         System.out.println("Let the battle begin!" );
+
+        System.out.println("---------------Team 1 ------------------");
+        team1.printParty();
+
+        System.out.println("---------------Team 2 ------------------");
+        team2.printParty();
         while(team1.isTeamLive() && team2.isTeamLive()){
+            //Scanner scanner = new Scanner(System.in);
 
             // Team 1---------------------------------------
             System.out.println("Which player of team 1 do you want to fight? Please insert his ID number" );
@@ -184,7 +192,7 @@ public class Main {
             }
 
             // Team 2---------------------------------------
-            System.out.println("Which player of team 1 do you want to fight? Please insert his ID number" );
+            System.out.println("Which player of team 2 do you want to fight? Please insert his ID number" );
             int id2 = scanner.nextInt();
             Character character2 = team2.getCharacter(id2);
             while (character2 == null){

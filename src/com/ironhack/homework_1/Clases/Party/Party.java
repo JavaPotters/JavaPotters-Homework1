@@ -70,4 +70,11 @@ public abstract class Party {
         }
     }
 
+    public void getCharacter(int id) {
+        for(Character character: party){
+            if(id == character.getId()){
+                return;
+            }
+        }
+    }
 }

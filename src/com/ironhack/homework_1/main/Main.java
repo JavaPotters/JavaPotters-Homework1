@@ -194,13 +194,15 @@ public class Main {
         System.out.println("Que comience la batalla" );
         while(team1.isTeamLive() && team2.isTeamLive()){
             System.out.println("¿Qué jugador quieres que luche en primer lugar para el equipo 1? Por favor ingresa el id" );
+            int id = scanner.nextInt();
+            team1.get(id);
         }
         //for (int i = 1; i<= 2; i++){
         //    int idPersonaje = scanner.nextInt();
         //}
 
 
-
+        scanner.close();
 
     }
 

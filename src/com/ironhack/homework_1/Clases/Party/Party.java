@@ -9,23 +9,25 @@ import java.util.List;
 
 public abstract class Party {
 
-    int numMembersParty;
-    protected static List<Character> party;
+    private int numMembersParty;
+    private static List<Character> listCharacter;
     private String nameParty;
     private boolean teamLive;
+    private int partyID;
 
     public Party(int numMembersParty, String nameParty) {
+        this.partyID = (int) (Math.random()*100);
         this.numMembersParty = numMembersParty;
         this.nameParty = nameParty;
-        party = new ArrayList<Character>();
+        this.listCharacter = new ArrayList<Character>();
         if(numMembersParty>=0){
             setTeamLive(true);
         }
     }
 
     public void addWizard(Wizard wizard){
-        if(party.size()< numMembersParty){
-            party.add(wizard);
+        if(this.listCharacter.size()< numMembersParty){
+            this.listCharacter.add(wizard);
             numMembersParty++;
         }
         else {
@@ -34,8 +36,8 @@ public abstract class Party {
     }
 
     public void addWarrior(Warrior warrior){
-        if(party.size()< numMembersParty){
-            party.add(warrior);
+        if(this.listCharacter.size()< numMembersParty){
+            this.listCharacter.add(warrior);
             numMembersParty++;
         }
         else {
@@ -44,8 +46,8 @@ public abstract class Party {
     }
 
     public void deleteCharacter(Character character){
-        if(party.size()< numMembersParty){
-            party.remove(character);
+        if(this.listCharacter.size()< numMembersParty){
+            this.listCharacter.remove(character);
             numMembersParty--;
             if(numMembersParty<=0){
                 setTeamLive(false);
@@ -56,6 +58,21 @@ public abstract class Party {
         }
     }
 
+    public void printParty(){
+        for(Character i: this.listCharacter){
+            i.toString();
+        }
+    }
+
+    public Character getCharacter(int id) {
+        for(Character character: this.listCharacter){
+            if(id == character.getId()){
+                System.out.println("The chosen character is:");
+                System.out.println(character);
+                return character;
+            }
+        } return null;
+    }
     public boolean isTeamLive() {
         return teamLive;
     }
@@ -63,20 +80,19 @@ public abstract class Party {
     public void setTeamLive(boolean teamLive) {
         this.teamLive = teamLive;
     }
-
-    public void printParty(){
-        for(Character i: party){
-            i.toString();
-        }
+    public String getNameParty() {
+        return nameParty;
     }
 
-    public Character getCharacter(int id) {
-        for(Character character: party){
-            if(id == character.getId()){
-                System.out.println("The chosen character is:");
-                System.out.println(character);
-                return character;
-            }
-        } return null;
+    public void setNameParty(String nameParty) {
+        this.nameParty = nameParty;
+    }
+
+    public int getPartyID() {
+        return partyID;
+    }
+
+    public void setPartyID(int partyID) {
+        this.partyID = partyID;
     }
 }

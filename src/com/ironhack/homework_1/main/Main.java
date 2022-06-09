@@ -64,6 +64,7 @@ public class Main {
                     System.out.println("The name of the team 1 is: " + nameTeam1);
                     team1 = new RandomParty(numMemberParty, nameTeam1);
                     team1.printParty();
+                    System.out.println("id team 1 ->"+team1.getPartyID());                    ;
 
                     // Team 2 -------------------------------------------
                     System.out.println(("What do you want your team 2 to be called?"));
@@ -71,6 +72,7 @@ public class Main {
                     System.out.println("The name of the team 2 is: " + nameTeam2);
                     team2 = new RandomParty(numMemberParty, nameTeam2);
                     team2.printParty();
+                    System.out.println("id team 2 ->"+team2.getPartyID());
 
                     //scanner.close();
                     break;
@@ -172,9 +174,14 @@ public class Main {
 
         System.out.println("---------------Team 1 ------------------");
         team1.printParty();
+        System.out.println("id team 1 ->"+team1.getPartyID());
+        System.out.println("name team 1 ->"+team1.getNameParty());
 
         System.out.println("---------------Team 2 ------------------");
         team2.printParty();
+        System.out.println("id team 2 ->"+team2.getPartyID());
+        System.out.println("name team 2 ->"+team2.getNameParty());
+
         while(team1.isTeamLive() && team2.isTeamLive()){
             //Scanner scanner = new Scanner(System.in);
 

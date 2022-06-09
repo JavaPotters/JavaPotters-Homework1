@@ -9,7 +9,7 @@ public class Warrior extends Character implements Attacker {
     private double stamina;
     private double strength;
 
-    public Warrior(int id, String name, int hp, boolean isAlive, double stamina, double strength) {
+    public Warrior(int id, String name, double hp, boolean isAlive, double stamina, double strength) {
         super(id, name, hp, isAlive);
         this.stamina = stamina;
         this.strength = strength;

@@ -1,12 +1,12 @@
 package com.ironhack.homework_1.Clases.Character;
 
-public class Character {
+public abstract  class Character {
     private int id;
     private String name;
-    private int hp;
+    private double hp;
     private boolean isAlive;
 
-    public Character(int id, String name, int hp, boolean isAlive) {
+    public Character(int id, String name, double hp, boolean isAlive) {
         this.id = id;
         this.name = name;
         this.hp = hp;
@@ -29,12 +29,18 @@ public class Character {
         this.name = name;
     }
 
-    public int getHp() {
+    public double getHp() {
         return hp;
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
+    public void setHp(double hp) {
+        if(hp < 0){
+            this.hp = 0;
+            setAlive(false);
+        } else {
+            this.hp = hp;
+        }
+
     }
 
     public boolean isAlive() {
@@ -44,4 +50,6 @@ public class Character {
     public void setAlive(boolean alive) {
         isAlive = alive;
     }
+
+    public abstract double attack();
 }

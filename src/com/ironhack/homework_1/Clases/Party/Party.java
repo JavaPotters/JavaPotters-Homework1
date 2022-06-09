@@ -70,11 +70,13 @@ public abstract class Party {
         }
     }
 
-    public void getCharacter(int id) {
+    public Character getCharacter(int id) {
         for(Character character: party){
             if(id == character.getId()){
-                return;
+                System.out.println("The chosen character is:");
+                System.out.println(character);
+                return character;
             }
-        }
+        } return null;
     }
 }

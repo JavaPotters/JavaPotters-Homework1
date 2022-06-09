@@ -32,6 +32,12 @@ public class Main {
         System.out.println("Bienevenido al ... de JavaPotters");
         Scanner scanner = new Scanner(System.in);
 
+        int numMemberParty;
+        String nameTeam1 = "";
+        String nameTeam2 = "";
+        Party team1;
+        Party team2;
+
         int option;
         do{
             System.out.println("Please, select one option: \n" +
@@ -40,11 +46,7 @@ public class Main {
             option = scanner.nextInt();
         } while (option != 1 && option != 2);
 
-            int numMemberParty;
-            String nameTeam1;
-            String nameTeam2;
-            Party team1;
-            Party team2;
+
             switch(option){
                 case 1:
                     System.out.println("You have chosen to create a full random party");
@@ -167,17 +169,58 @@ public class Main {
 
         System.out.println("Let the battle begin!" );
         while(team1.isTeamLive() && team2.isTeamLive()){
-            System.out.println("Which player of team 1 do you want to fight first? Please insert his ID number" );
 
-            int id = scanner.nextInt();
-            team1.getCharacter(id);
+            // Team 1---------------------------------------
+            System.out.println("Which player of team 1 do you want to fight? Please insert his ID number" );
+            int id1 = scanner.nextInt();
+            Character character1 = team1.getCharacter(id1);
+            while (character1 == null){
+                System.out.println("ERROR! ID invalid. Party Team 1 is made up of the following characters");
+                team1.printParty();
+                System.out.println("Which player of team 1 do you want to fight? Please insert his ID number" );
+
+                id1 = scanner.nextInt();
+                character1 = team1.getCharacter(id1);
+            }
+
+            // Team 2---------------------------------------
+            System.out.println("Which player of team 1 do you want to fight? Please insert his ID number" );
+            int id2 = scanner.nextInt();
+            Character character2 = team2.getCharacter(id2);
+            while (character2 == null){
+                System.out.println("ERROR! ID invalid. Party Team 2 is made up of the following characters");
+                team2.printParty();
+                System.out.println("Which player of team 2 do you want to fight? Please insert his ID number" );
+
+                id2 = scanner.nextInt();
+                character2 = team2.getCharacter(id2);
+            }
 
 
+            //Pelea-------------
+            while (character1.isAlive() || character2.isAlive()){
+                double attack1 = character1.attack();
+                double attack2 = character2.attack();
+
+                character1.setHp(character1.getHp()-attack2);
+                character2.setHp(character2.getHp()-attack1);
+            }
+
+            if (!character1.isAlive() && !character2.isAlive()){
+                team1.deleteCharacter(character1);
+                team2.deleteCharacter(character2);
+                System.out.println("Characters 1 and 2 are dead. both teams have lost");
+            } else if(!character1.isAlive()){
+                team1.deleteCharacter(character1);
+                System.out.println("Character 1 is dead. Team 1 has lost :( \n"
+                        + nameTeam2 +" is the winner of this battle");
+            } else if(!character2.isAlive()){
+                team2.deleteCharacter(character2);
+                System.out.println("Character 2 is dead. Team 2 has lost :( \n"
+                        + nameTeam1 +" is the winner of this battle");
+            }
 
         }
-        //for (int i = 1; i<= 2; i++){
-        //    int idPersonaje = scanner.nextInt();
-        //}
 
         scanner.close();
 

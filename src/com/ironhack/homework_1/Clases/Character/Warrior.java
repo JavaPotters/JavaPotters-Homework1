@@ -60,7 +60,7 @@ public class Warrior extends Character implements Attacker {
                 ", Name = " + getName() +
                 ", HP = " + getHp() +
                 ", Stamina=" + getStamina() +
-                ", strength=" + getStrength() +
+                ", Strength=" + getStrength() +
                 " } ");
         return "";
     }

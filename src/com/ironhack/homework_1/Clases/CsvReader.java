@@ -15,26 +15,24 @@ public class CsvReader {
     public void readCSV() {
         ArrayList<ArrayList<String>> characterList = new ArrayList<ArrayList<String>>();
         StringBuilder sb = new StringBuilder();
-        Path filePath = Paths.get("/Users/sofiadelafuente/Desktop/java-bootcamp/unit1/homework-1/src/com/ironhack/homework_1/characters.csv");
+        Path filePath = Paths.get("/Users/sofiadelafuente/Desktop/java-bootcamp/unit1/JavaPotters-Homework1/src/com/ironhack/homework_1/characters.csv");
         try (BufferedReader br = Files.newBufferedReader(filePath)) {
             String line = br.readLine();
             while (line != null) {
-                String[] lineData = line.split(",");
-                /*
+                String[] lineData = line.split(";");
 
-                if (lineData[0] == "Wizard") {
+                if (lineData[0].equals("Warrior")) {
                     Warrior warrior = new Warrior(Integer.parseInt(lineData[1]), lineData[2],
                             Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
                             Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
                     System.out.println(warrior + "\n");
-                } else {
+                } else if (lineData[0].equals("Wizard")) {
                     Wizard wizard = new Wizard(Integer.parseInt(lineData[1]), lineData[2],
                             Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
                             Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
                     System.out.println(wizard + "\n");
                 }
 
-                 */
                 ArrayList<String> temporalData = new ArrayList<String>();
                 for (String data : lineData) {
                     temporalData.add(data);
@@ -47,7 +45,6 @@ public class CsvReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(sb.toString());
     }
 }
 

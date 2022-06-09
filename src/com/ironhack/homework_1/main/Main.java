@@ -21,12 +21,9 @@ import static com.ironhack.homework_1.Clases.Properties.CustomizedProperties.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-/*
 
         CsvReader lectorCSV = new CsvReader();
         lectorCSV.readCSV();
-
- */
 
         // Aquí comienza el juego:
         System.out.println("Bienevenido al ... de JavaPotters");

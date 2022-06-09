@@ -23,9 +23,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         CsvReader lectorCSV = new CsvReader();
-        lectorCSV.readCSV();
+        lectorCSV.readCSV("nameTeam1", "nameTeam2", "pathFile");
 
-        // Aquí comienza el juego:
+        // Let's start!
         System.out.println("Bienevenido al ... de JavaPotters");
         Scanner scanner = new Scanner(System.in);
 
@@ -39,9 +39,10 @@ public class Main {
         do{
             System.out.println("Please, select one option: \n" +
                     "1. Choose 1 to create a full random party \n" +
-                    "2. Choose 2 to create a customized party \n");
+                    "2. Choose 2 to create a customized party \n" +
+                    "3. Choose 3 to import your own CSV file\n");
             option = scanner.nextInt();
-        } while (option != 1 && option != 2);
+        } while (option != 1 && option != 2 && option != 3);
 
 
             switch(option){
@@ -160,6 +161,21 @@ public class Main {
                     team2.printParty();
 
                     break;
+
+                case 3:
+                    System.out.println("You have chosen to import you CSV file");
+                    System.out.println("Which is your path's file?");
+                    String pathFile = scanner.next();
+                    System.out.println("What do you want your team 1 to be called?");
+                    nameTeam1 = scanner.next();
+                    System.out.println("What do you want your team 1 to be called?");
+                    nameTeam2 = scanner.next();
+
+                    /*
+
+                    CsvReader lectorCSV = new CsvReader();
+                    lectorCSV.readCSV(nameTeam1, nameTeam2, pathFile);
+
                 default:
                     team1 = new RandomParty(5, "Random Team 1");
                     team2 = new RandomParty(5, "Random Team 2");

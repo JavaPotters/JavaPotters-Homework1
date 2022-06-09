@@ -95,4 +95,8 @@ public abstract class Party {
     public void setPartyID(int partyID) {
         this.partyID = partyID;
     }
+
+    public Party(String nameParty) {
+        this.nameParty = nameParty;
+    }
 }

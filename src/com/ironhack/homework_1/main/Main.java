@@ -1,29 +1,26 @@
 package com.ironhack.homework_1.main;
 
+
 import com.ironhack.homework_1.Clases.Character.Character;
 import com.ironhack.homework_1.Clases.Character.Warrior;
 import com.ironhack.homework_1.Clases.Character.Wizard;
-import com.ironhack.homework_1.Clases.CsvReader;
 import com.ironhack.homework_1.Clases.Party.CustomizedParty;
 import com.ironhack.homework_1.Clases.Party.Party;
 import com.ironhack.homework_1.Clases.Party.RandomParty;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
-import static com.ironhack.homework_1.Clases.Properties.CustomizedProperties.*;
+import static com.ironhack.homework_1.Clases.Properties.CustomizedProperties.createCustomizedWarrior;
+import static com.ironhack.homework_1.Clases.Properties.CustomizedProperties.createCustomizedWizard;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        CsvReader lectorCSV = new CsvReader();
-        lectorCSV.readCSV("nameTeam1", "nameTeam2", "pathFile");
+        //CsvReader lectorCSV = new CsvReader();
+        //lectorCSV.readCSV("nameTeam1", "nameTeam2", "pathFile");
 
         // Let's start!
         System.out.println("Bienevenido al ... de JavaPotters");
@@ -51,7 +48,7 @@ public class Main {
                     System.out.println("How many players between 1-5 does each team have?");
 
                     numMemberParty = scanner.nextInt();
-                    while (numMemberParty < 0 || numMemberParty > 5){
+                    while (numMemberParty < 1 || numMemberParty > 5){
                         System.out.println("This number isn't valid \n How many players between 1-5 does each team have?");
                         numMemberParty = scanner.nextInt();
                     }
@@ -198,6 +195,9 @@ public class Main {
 
         System.out.println(team1.getNumMembersParty());
         System.out.println(team2.getNumMembersParty());
+
+        ArrayList<Character> cemetery = new ArrayList<>();
+
         while(team1.isTeamLive() && team2.isTeamLive()){
             //Scanner scanner = new Scanner(System.in);
 
@@ -244,20 +244,24 @@ public class Main {
                 character2.setHp(character2.getHp()-attack1);
                 System.out.println(character1.getName()+" tiene " + character1.getHp() + " HealtPoints.");
                 System.out.println(character2.getName()+" tiene "  + character2.getHp() + " HealtPoints.");
-                System.out.println("--------END FITGH N."+numPelea+"-------------");
+                System.out.println("--------END FIGHT N."+numPelea+"-------------");
                 numPelea++;
             }
 
             if (!character1.isAlive() && !character2.isAlive()){
+                cemetery.add(character1);
                 team1.deleteCharacter(character1);
+                cemetery.add(character2);
                 team2.deleteCharacter(character2);
                 System.out.println(character1.getName()+" and "+character2.getName()+
                         " are dead. Both teams have lost");
             } else if(!character1.isAlive()){
+                cemetery.add(character1);
                 team1.deleteCharacter(character1);
                 System.out.println(character1.getName()+" is dead. Team 1 has lost :( \n"
                         + nameTeam2 +" is the winner of this battle!");
             } else if(!character2.isAlive()){
+                cemetery.add(character2);
                 team2.deleteCharacter(character2);
                 System.out.println(character1.getName()+" is dead. Team 2 has lost :( \n"
                         + nameTeam1 +" is the winner of this battle!");
@@ -265,6 +269,8 @@ public class Main {
             System.out.println("* * * * * * * * * * * END OF BATTLE "+numBatalla+"* * * * * * * * * * *\n");
             System.out.println("Team 1 is alive? "+ team1.isTeamLive() + ". Number of member: "+ team1.getNumMembersParty());
             System.out.println("team 2 is alive? "+ team2.isTeamLive()+ ". Number of member: "+ team2.getNumMembersParty());
+            System.out.println("\n ✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟ Cemetery ✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟ :" );
+            cemetery.forEach(System.out::println);
             numBatalla++;
 
         }

@@ -4,6 +4,7 @@ package com.ironhack.homework_1.main;
 import com.ironhack.homework_1.Clases.Character.Character;
 import com.ironhack.homework_1.Clases.Character.Warrior;
 import com.ironhack.homework_1.Clases.Character.Wizard;
+import com.ironhack.homework_1.Clases.CsvReader;
 import com.ironhack.homework_1.Clases.Party.CustomizedParty;
 import com.ironhack.homework_1.Clases.Party.Party;
 import com.ironhack.homework_1.Clases.Party.RandomParty;
@@ -161,16 +162,28 @@ public class Main {
 
                 case 3:
                     System.out.println("You have chosen to import you CSV file");
-                    System.out.println("Which is your path's file?");
-                    String pathFile = scanner.next();
+                    //System.out.println("Which is your path's file?");
+                    //String pathFile = scanner.next();
+                    //CsvReader lectorCSV = new CsvReader(pathFile);
+                    CsvReader lectorCSV = new CsvReader();
+
                     System.out.println("What do you want your team 1 to be called?");
                     nameTeam1 = scanner.next();
-                    System.out.println("What do you want your team 1 to be called?");
+                    System.out.println("What do you want your team 2 to be called?");
                     nameTeam2 = scanner.next();
 
+                    lectorCSV.createParties(nameTeam1, nameTeam2);
+
+                    System.out.println("The "+nameTeam1+" team's party has been successfully created");
+                    team1 = lectorCSV.getParty1();
+                    team1.printParty();
+
+                    System.out.println("\nThe "+nameTeam2+" team's party has been successfully created");
+                    team2 = lectorCSV.getParty2();
+                    team2.printParty();
                     /*
 
-                    CsvReader lectorCSV = new CsvReader();
+
                     lectorCSV.readCSV(nameTeam1, nameTeam2, pathFile);*/
 
                     break;
@@ -258,12 +271,12 @@ public class Main {
             } else if(!character1.isAlive()){
                 cemetery.add(character1);
                 team1.deleteCharacter(character1);
-                System.out.println(character1.getName()+" is dead. Team 1 has lost :( \n"
+                System.out.println(character1.getName()+" is dead. Team 1 has lost :( \n Team 2 "
                         + nameTeam2 +" is the winner of this battle!");
             } else if(!character2.isAlive()){
                 cemetery.add(character2);
                 team2.deleteCharacter(character2);
-                System.out.println(character1.getName()+" is dead. Team 2 has lost :( \n"
+                System.out.println(character2.getName()+" is dead. Team 2 has lost :( \n Team 1 "
                         + nameTeam1 +" is the winner of this battle!");
             }
             System.out.println("* * * * * * * * * * * END OF BATTLE "+numBatalla+"* * * * * * * * * * *\n");

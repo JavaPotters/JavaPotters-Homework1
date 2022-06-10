@@ -7,8 +7,10 @@ import com.ironhack.homework_1.Clases.Character.Wizard;
 import java.util.Scanner;
 
 public class CustomizedProperties {
+    private static int idCounter = 1;
     public static Character createCustomizedWizard(){
-        int id = (int)(Math.random()*100);
+        //int id = (int)(Math.random()*100);
+        int id = idCounter++;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Por favor ingrese el nombre del Wizard");
         String name = scanner.nextLine();
@@ -36,7 +38,8 @@ public class CustomizedProperties {
 
     public static Character createCustomizedWarrior(){
         Scanner scanner = new Scanner(System.in);
-        int id = (int)(Math.random()*100);
+        //int id = (int)(Math.random()*100);
+        int id = idCounter++;
         System.out.println("Por favor ingrese el nombre del Warrior");
         String name = scanner.nextLine();
         System.out.println("Por favor ingrese los puntos de vida (entre 100 y 200)");

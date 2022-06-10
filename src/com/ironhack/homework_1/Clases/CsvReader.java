@@ -15,13 +15,94 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CsvReader {
+    private Party team1;
+    private Party team2;
+    private StringBuilder sb;
+    private Path filePath;
+    private Scanner scanner;
+    private int partySize;
+    private int partyCounter;
+    //public CsvReader(String path) throws IOException {
+    public CsvReader() throws IOException {
 
-    public void readCSV(String team1Name, String team2Name, String path) throws IOException {
+        //ArrayList<ArrayList<String>> characterList = new ArrayList<ArrayList<String>>();
+        sb = new StringBuilder();
 
-        Party team1 = new CSVParty(team1Name);
-        Party team2 = new CSVParty(team2Name);
 
-        ArrayList<ArrayList<String>> characterList = new ArrayList<ArrayList<String>>();
+        /*try {
+            filePath = Paths.get(path);
+        } catch (NoSuchFileException e){
+
+        } finally {*/
+        filePath = Paths.get("src/com/ironhack/homework_1/characters.csv");
+        //}
+
+        scanner = new Scanner(filePath);
+        int count = 0;
+        while (scanner.hasNext()) {
+            count++;
+            scanner.nextLine();
+        }
+        scanner.close();
+
+        partyCounter = 0;
+        partySize = count/2;
+    }
+
+    public void createParties(String team1Name, String team2Name) throws IOException {
+        team1 = new CSVParty(partySize, team1Name);
+        team2 = new CSVParty(partySize, team2Name);
+
+        try (BufferedReader br = Files.newBufferedReader(filePath)) {
+            String line = br.readLine();
+            while (line != null) {
+                String[] lineData = line.split(";");
+
+                if (lineData[0].equals("Warrior")) {
+                    Warrior warrior = new Warrior(Integer.parseInt(lineData[1]), lineData[2],
+                            Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
+                            Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
+                    //System.out.println(warrior + "\n");
+
+                    if(partyCounter < partySize){
+                        team1.addWarrior(warrior);
+                    } else {
+                        team2.addWarrior(warrior);
+                    }
+                    partyCounter++;
+                }
+                else if (lineData[0].equals("Wizard")) {
+                    Wizard wizard = new Wizard(Integer.parseInt(lineData[1]), lineData[2],
+                            Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
+                            Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
+                    //System.out.println(wizard + "\n");
+
+                    if(partyCounter < partySize){
+                        team1.addWizard(wizard);
+                    } else {
+                        team2.addWizard(wizard);
+                    }
+                    partyCounter++;
+                }
+
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public Party getParty1(){
+        return team1;
+    }
+    public Party getParty2(){
+        return team2;
+    }
+
+    /*
+    *
+    * //ArrayList<ArrayList<String>> characterList = new ArrayList<ArrayList<String>>();
         StringBuilder sb = new StringBuilder();
 
         Path filePath;
@@ -34,6 +115,7 @@ public class CsvReader {
             scanner.nextLine();
         }
         scanner.close();
+
         int partyCounter = 0;
         int partySize = count/2;
 
@@ -47,28 +129,40 @@ public class CsvReader {
                             Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
                             Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
                     System.out.println(warrior + "\n");
-                } else if (lineData[0].equals("Wizard")) {
+
+                    if(partyCounter < partySize){
+                        team1.addWarrior(warrior);
+                    } else {
+                        team2.addWarrior(warrior);
+                    }
+                    partyCounter++;
+                }
+                else if (lineData[0].equals("Wizard")) {
                     Wizard wizard = new Wizard(Integer.parseInt(lineData[1]), lineData[2],
                             Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
                             Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
                     System.out.println(wizard + "\n");
+
+                    if(partyCounter < partySize){
+                        team1.addWizard(wizard);
+                    } else {
+                        team2.addWizard(wizard);
+                    }
+                    partyCounter++;
                 }
 
-                ArrayList<String> temporalData = new ArrayList<String>();
+                /*ArrayList<String> temporalData = new ArrayList<String>();
                 for (String data : lineData) {
                     temporalData.add(data);
                 }
-                characterList.add(temporalData);
+    //characterList.add(temporalData);
                 sb.append(line);
                 sb.append(System.lineSeparator());
-                line = br.readLine();
-
-                partyCounter++;
-
-            }
+    line = br.readLine();
+}
         } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+                e.printStackTrace();
+                }
+    * */
 }
 

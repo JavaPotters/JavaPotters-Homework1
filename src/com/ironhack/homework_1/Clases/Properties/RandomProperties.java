@@ -7,10 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RandomProperties {
-
+    private static int idCounter = 1;
     private static List<String> namesList = new ArrayList<>();
+
+
     public static Wizard createRandomWizard() {
-        int id = (int)(Math.random()*100);
+        int id = idCounter++;
         String name = generarNombresAleatorios();
         for(String nameList: namesList){
             if(nameList.equals(name)){
@@ -27,7 +29,8 @@ public class RandomProperties {
     }
 
     public static Warrior createRandomWarrior() {
-        int id = (int)(Math.random()*100);
+        int id = idCounter++;
+        //int id = (int)(Math.random()*100);
         String name = generarNombresAleatorios();
         for(String nameList: namesList){
             if(nameList.equals(name)){

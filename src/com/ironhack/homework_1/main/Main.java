@@ -54,7 +54,7 @@ public class Main {
                     }
 
                     // Team 1 -------------------------------------------
-                    System.out.println("What do you want your team 1 to be called?");
+                    System.out.println("\nWhat do you want your team 1 to be called?");
                     nameTeam1 = scanner.next();
                     System.out.println("The name of the team 1 is: " + nameTeam1);
                     team1 = new RandomParty(numMemberParty, nameTeam1);
@@ -62,7 +62,7 @@ public class Main {
                     //System.out.println("id team 1 ->"+team1.getPartyID());                    ;
 
                     // Team 2 -------------------------------------------
-                    System.out.println(("What do you want your team 2 to be called?"));
+                    System.out.println(("\nWhat do you want your team 2 to be called?"));
                     nameTeam2 = scanner.next();
                     System.out.println("The name of the team 2 is: " + nameTeam2);
                     team2 = new RandomParty(numMemberParty, nameTeam2);
@@ -82,7 +82,7 @@ public class Main {
                     }
 
                     // Team 1 -------------------------------------------
-                    System.out.println("What do you want your team 1 to be called?");
+                    System.out.println("\nWhat do you want your team 1 to be called?");
                     nameTeam1 = scanner.next();
                     System.out.println("The name of the team 1 is: " + nameTeam1);
                     team1 = new CustomizedParty(numMemberParty, nameTeam1);
@@ -120,7 +120,7 @@ public class Main {
                     team1.printParty();
 
                     // Team 2 -------------------------------------------
-                    System.out.println("What do you want your team 2 to be called?");
+                    System.out.println("\nWhat do you want your team 2 to be called?");
                     nameTeam2 = scanner.next();
                     System.out.println("The name of the team 2 is: " + nameTeam2);
                     team2 = new CustomizedParty(numMemberParty, nameTeam2);
@@ -181,7 +181,7 @@ public class Main {
 
             }
 
-        System.out.println("Let the battle begin!" );
+        System.out.println("\nLet the battle begin!" );
 
         /*System.out.println("---------------Team 1 ------------------");
         team1.printParty();
@@ -191,10 +191,10 @@ public class Main {
         System.out.println("---------------Team 2 ------------------");
         team2.printParty();
         System.out.println("id team 2 ->"+team2.getPartyID());
-        System.out.println("name team 2 ->"+team2.getNameParty());*/
+        System.out.println("name team 2 ->"+team2.getNameParty());
 
         System.out.println(team1.getNumMembersParty());
-        System.out.println(team2.getNumMembersParty());
+        System.out.println(team2.getNumMembersParty());*/
 
         ArrayList<Character> cemetery = new ArrayList<>();
 
@@ -202,7 +202,7 @@ public class Main {
             //Scanner scanner = new Scanner(System.in);
 
             // Team 1---------------------------------------
-            System.out.println("Which player of team 1 do you want to fight? Please insert his ID number" );
+            System.out.println("\nWhich player of team 1 do you want to fight? Please insert his ID number" );
             int id1 = scanner.nextInt();
             Character character1 = team1.getCharacter(id1);
             while (character1 == null){
@@ -215,7 +215,7 @@ public class Main {
             }
 
             // Team 2---------------------------------------
-            System.out.println("Which player of team 2 do you want to fight? Please insert his ID number" );
+            System.out.println("\nWhich player of team 2 do you want to fight? Please insert his ID number" );
             int id2 = scanner.nextInt();
             Character character2 = team2.getCharacter(id2);
             while (character2 == null){
@@ -244,7 +244,7 @@ public class Main {
                 character2.setHp(character2.getHp()-attack1);
                 System.out.println(character1.getName()+" tiene " + character1.getHp() + " HealtPoints.");
                 System.out.println(character2.getName()+" tiene "  + character2.getHp() + " HealtPoints.");
-                System.out.println("--------END FIGHT N."+numPelea+"-------------");
+                System.out.println("--------END FIGHT N."+numPelea+"-------------\n");
                 numPelea++;
             }
 
@@ -270,7 +270,7 @@ public class Main {
             System.out.println("Team 1 is alive? "+ team1.isTeamLive() + ". Number of member: "+ team1.getNumMembersParty());
             System.out.println("team 2 is alive? "+ team2.isTeamLive()+ ". Number of member: "+ team2.getNumMembersParty());
             System.out.println("\n ✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟ Cemetery ✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟ :" );
-            cemetery.forEach(System.out::println);
+            cemetery.forEach(System.out::print);
             numBatalla++;
 
         }

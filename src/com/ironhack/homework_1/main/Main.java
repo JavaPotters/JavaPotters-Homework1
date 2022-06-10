@@ -24,7 +24,7 @@ public class Main {
         //lectorCSV.readCSV("nameTeam1", "nameTeam2", "pathFile");
 
         // Let's start!
-        System.out.println("Bienevenido al ... de JavaPotters");
+        System.out.println(" * * * * * * * Bienevenido al juego de roles de JavaPotters * * * * * * *\n");
         Scanner scanner = new Scanner(System.in);
 
         int numMemberParty;
@@ -221,7 +221,7 @@ public class Main {
             while (character1 == null){
                 System.out.println("ERROR! ID invalid. Party Team 1 is made up of the following characters");
                 team1.printParty();
-                System.out.println("Which player of team 1 do you want to fight? Please insert his ID number" );
+                System.out.println("\nWhich player of team 1 do you want to fight? Please insert his ID number" );
 
                 id1 = scanner.nextInt();
                 character1 = team1.getCharacter(id1);
@@ -234,7 +234,7 @@ public class Main {
             while (character2 == null){
                 System.out.println("ERROR! ID invalid. Party Team 2 is made up of the following characters");
                 team2.printParty();
-                System.out.println("Which player of team 2 do you want to fight? Please insert his ID number" );
+                System.out.println("\nWhich player of team 2 do you want to fight? Please insert his ID number" );
 
                 id2 = scanner.nextInt();
                 character2 = team2.getCharacter(id2);
@@ -280,8 +280,10 @@ public class Main {
                         + nameTeam1 +" is the winner of this battle!");
             }
             System.out.println("* * * * * * * * * * * END OF BATTLE "+numBatalla+"* * * * * * * * * * *\n");
-            System.out.println("Team 1 is alive? "+ team1.isTeamLive() + ". Number of member: "+ team1.getNumMembersParty());
-            System.out.println("team 2 is alive? "+ team2.isTeamLive()+ ". Number of member: "+ team2.getNumMembersParty());
+            System.out.println(team1.getNameParty()+ " is alive? "+ team1.isTeamLive() +
+                    ". Number of member team 1: "+ team1.getNumMembersParty());
+            System.out.println(team2.getNameParty()+ " is alive? "+ team2.isTeamLive()+
+                    ". Number of member team 2: "+ team2.getNumMembersParty());
             System.out.println("\n ✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟ Cemetery ✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟ :" );
             cemetery.forEach(System.out::print);
             numBatalla++;

@@ -20,9 +20,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        //CsvReader lectorCSV = new CsvReader();
-        //lectorCSV.readCSV("nameTeam1", "nameTeam2", "pathFile");
-
         // Let's start!
         System.out.println(" * * * * * * * Bienevenido al juego de roles de JavaPotters * * * * * * *\n");
         Scanner scanner = new Scanner(System.in);
@@ -68,9 +65,6 @@ public class Main {
                     System.out.println("The name of the team 2 is: " + nameTeam2);
                     team2 = new RandomParty(numMemberParty, nameTeam2);
                     team2.printParty();
-                    //System.out.println("id team 2 ->"+team2.getPartyID());
-
-                    //scanner.close();
                     break;
 
                 case 2:
@@ -162,9 +156,7 @@ public class Main {
 
                 case 3:
                     System.out.println("You have chosen to import you CSV file");
-                    //System.out.println("Which is your path's file?");
-                    //String pathFile = scanner.next();
-                    //CsvReader lectorCSV = new CsvReader(pathFile);
+
                     CsvReader lectorCSV = new CsvReader();
 
                     System.out.println("What do you want your team 1 to be called?");
@@ -181,12 +173,8 @@ public class Main {
                     System.out.println("\nThe "+nameTeam2+" team's party has been successfully created");
                     team2 = lectorCSV.getParty2();
                     team2.printParty();
-                    /*
-
-
-                    lectorCSV.readCSV(nameTeam1, nameTeam2, pathFile);*/
-
                     break;
+
                 default:
                     team1 = new RandomParty(5, "Random Team 1");
                     team2 = new RandomParty(5, "Random Team 2");
@@ -196,23 +184,9 @@ public class Main {
 
         System.out.println("\nLet the battle begin!" );
 
-        /*System.out.println("---------------Team 1 ------------------");
-        team1.printParty();
-        System.out.println("id team 1 ->"+team1.getPartyID());
-        System.out.println("name team 1 ->"+team1.getNameParty());
-
-        System.out.println("---------------Team 2 ------------------");
-        team2.printParty();
-        System.out.println("id team 2 ->"+team2.getPartyID());
-        System.out.println("name team 2 ->"+team2.getNameParty());
-
-        System.out.println(team1.getNumMembersParty());
-        System.out.println(team2.getNumMembersParty());*/
-
         ArrayList<Character> cemetery = new ArrayList<>();
 
         while(team1.isTeamLive() && team2.isTeamLive()){
-            //Scanner scanner = new Scanner(System.in);
 
             // Team 1---------------------------------------
             System.out.println("\nWhich player of team 1 do you want to fight? Please insert his ID number" );
@@ -243,7 +217,7 @@ public class Main {
             int numPelea = 1;
             int numBatalla = 1;
 
-            //Pelea-------------
+            // Battle -------------
             while (character1.isAlive() && character2.isAlive()){
                 double attack1 = character1.attack();
                 double attack2 = character2.attack();
@@ -292,7 +266,6 @@ public class Main {
         System.out.println("* * * * * * * * * * * GAME OVER * * * * * * * * * * *\n");
 
     }
-
 
 
 }

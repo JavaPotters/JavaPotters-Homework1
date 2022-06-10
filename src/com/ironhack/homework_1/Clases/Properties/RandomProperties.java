@@ -30,7 +30,7 @@ public class RandomProperties {
 
     public static Warrior createRandomWarrior() {
         int id = idCounter++;
-        //int id = (int)(Math.random()*100);
+
         String name = generarNombresAleatorios();
         for(String nameList: namesList){
             if(nameList.equals(name)){

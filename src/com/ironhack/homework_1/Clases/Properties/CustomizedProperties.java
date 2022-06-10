@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class CustomizedProperties {
     private static int idCounter = 1;
     public static Character createCustomizedWizard(){
-        //int id = (int)(Math.random()*100);
+
         int id = idCounter++;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Por favor ingrese el nombre del Wizard");

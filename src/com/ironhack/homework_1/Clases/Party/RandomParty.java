@@ -12,13 +12,11 @@ public class RandomParty extends Party{
         for(int i=0; i<numWarriorsMax; i++){
             Warrior warrior = RandomProperties.createRandomWarrior();
             this.addWarrior(warrior);
-            //warrior.toString();
         }
 
         for(int i=0; i<numWizardsMax; i++){
             Wizard wizard = RandomProperties.createRandomWizard();
             this.addWizard(wizard);
-            //wizard.toString();
         }
         System.out.println("Random party creada exitosamente");
 

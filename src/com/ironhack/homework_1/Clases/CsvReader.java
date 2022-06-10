@@ -25,17 +25,10 @@ public class CsvReader {
     //public CsvReader(String path) throws IOException {
     public CsvReader() throws IOException {
 
-        //ArrayList<ArrayList<String>> characterList = new ArrayList<ArrayList<String>>();
         sb = new StringBuilder();
 
-
-        /*try {
-            filePath = Paths.get(path);
-        } catch (NoSuchFileException e){
-
-        } finally {*/
         filePath = Paths.get("src/com/ironhack/homework_1/characters.csv");
-        //}
+
 
         scanner = new Scanner(filePath);
         int count = 0;
@@ -62,7 +55,6 @@ public class CsvReader {
                     Warrior warrior = new Warrior(Integer.parseInt(lineData[1]), lineData[2],
                             Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
                             Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
-                    //System.out.println(warrior + "\n");
 
                     if(partyCounter < partySize){
                         team1.addWarrior(warrior);
@@ -75,7 +67,6 @@ public class CsvReader {
                     Wizard wizard = new Wizard(Integer.parseInt(lineData[1]), lineData[2],
                             Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
                             Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
-                    //System.out.println(wizard + "\n");
 
                     if(partyCounter < partySize){
                         team1.addWizard(wizard);
@@ -100,69 +91,5 @@ public class CsvReader {
         return team2;
     }
 
-    /*
-    *
-    * //ArrayList<ArrayList<String>> characterList = new ArrayList<ArrayList<String>>();
-        StringBuilder sb = new StringBuilder();
-
-        Path filePath;
-        filePath = Paths.get("src/com/ironhack/homework_1/characters.csv");
-
-        Scanner scanner = new Scanner(filePath);
-        int count = 0;
-        while (scanner.hasNext()) {
-            count++;
-            scanner.nextLine();
-        }
-        scanner.close();
-
-        int partyCounter = 0;
-        int partySize = count/2;
-
-        try (BufferedReader br = Files.newBufferedReader(filePath)) {
-            String line = br.readLine();
-            while (line != null) {
-                String[] lineData = line.split(";");
-
-                if (lineData[0].equals("Warrior")) {
-                    Warrior warrior = new Warrior(Integer.parseInt(lineData[1]), lineData[2],
-                            Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
-                            Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
-                    System.out.println(warrior + "\n");
-
-                    if(partyCounter < partySize){
-                        team1.addWarrior(warrior);
-                    } else {
-                        team2.addWarrior(warrior);
-                    }
-                    partyCounter++;
-                }
-                else if (lineData[0].equals("Wizard")) {
-                    Wizard wizard = new Wizard(Integer.parseInt(lineData[1]), lineData[2],
-                            Integer.parseInt(lineData[3]), Boolean.parseBoolean(lineData[4]),
-                            Double.parseDouble(lineData[5]), Double.parseDouble(lineData[6]));
-                    System.out.println(wizard + "\n");
-
-                    if(partyCounter < partySize){
-                        team1.addWizard(wizard);
-                    } else {
-                        team2.addWizard(wizard);
-                    }
-                    partyCounter++;
-                }
-
-                /*ArrayList<String> temporalData = new ArrayList<String>();
-                for (String data : lineData) {
-                    temporalData.add(data);
-                }
-    //characterList.add(temporalData);
-                sb.append(line);
-                sb.append(System.lineSeparator());
-    line = br.readLine();
-}
-        } catch (IOException e) {
-                e.printStackTrace();
-                }
-    * */
 }
 

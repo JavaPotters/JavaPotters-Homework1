@@ -4,7 +4,5 @@ public class CSVParty extends Party{
     public CSVParty(int numMembersParty, String nameParty) {
         super(numMembersParty, nameParty);
     }
-/*
-    public CSVParty(String nameParty) { super(nameParty); }*/
 
 }

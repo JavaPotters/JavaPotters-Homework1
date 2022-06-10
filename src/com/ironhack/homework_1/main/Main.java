@@ -248,15 +248,13 @@ public class Main {
                 double attack1 = character1.attack();
                 double attack2 = character2.attack();
 
-                System.out.println(character1.getName()+" ha atacado con una fuerza de " + attack1 + " puntos a "+
-                                character2.getName());
-                System.out.println(character2.getName()+" ha atacado con una fuerza de " + attack2 + " puntos a "+
-                        character1.getName());
+                System.out.println(character1.getName()+ " has attacked " + character2.getName() + " with a strength of " + attack1);
+                System.out.println(character2.getName()+ " has attacked " + character1.getName() + " with a strength of " + attack2 );
 
                 character1.setHp(character1.getHp()-attack2);
                 character2.setHp(character2.getHp()-attack1);
-                System.out.println(character1.getName()+" tiene " + character1.getHp() + " HealtPoints.");
-                System.out.println(character2.getName()+" tiene "  + character2.getHp() + " HealtPoints.");
+                System.out.println(character1.getName()+" has " + character1.getHp() + " Health Points.");
+                System.out.println(character2.getName()+" has "  + character2.getHp() + " Health Points.");
                 System.out.println("--------END FIGHT N."+numPelea+"-------------\n");
                 numPelea++;
             }

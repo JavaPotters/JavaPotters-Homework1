@@ -1,4 +1,4 @@
-package com.ironhack.homework_1.Clases;
+package com.ironhack.homework_1.Clases.Properties;
 
 import com.ironhack.homework_1.Clases.Character.Warrior;
 import com.ironhack.homework_1.Clases.Character.Wizard;

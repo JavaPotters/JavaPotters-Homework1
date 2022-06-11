@@ -8,6 +8,7 @@ import com.ironhack.homework_1.Clases.Party.CustomizedParty;
 import com.ironhack.homework_1.Clases.Party.Party;
 import com.ironhack.homework_1.Clases.Party.RandomParty;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -208,7 +209,7 @@ public class Game {
         }
     }
 
-    private void startBattle(){
+    private void startBattle() throws IOException {
         System.out.println("\nLet the battle begin!" );
 
         // Create array list cementery
@@ -292,11 +293,11 @@ public class Game {
             }
             System.out.println("* * * * * * * * * * * END OF BATTLE "+numBatalla+"* * * * * * * * * * *\n");
             System.out.println(team1.getNameParty()+ " is alive? "+ team1.isTeamLive() +
-                    ". Number of member team 1: "+ team1.getNumMembersParty());
+                    ". Number of members alive in team 1: "+ team1.getNumMembersParty());
             System.out.println(team2.getNameParty()+ " is alive? "+ team2.isTeamLive()+
-                    ". Number of member team 2: "+ team2.getNumMembersParty());
+                    ". Number of members alive in team 2: "+ team2.getNumMembersParty());
             System.out.println("\n ✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟ Cemetery ✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟✟ :" );
-            cemetery.forEach(System.out::print);
+            cemetery.forEach(System.out::println);
             numBatalla++;
 
         }
@@ -307,7 +308,16 @@ public class Game {
         } else if (team2.isTeamLive()) {
             System.out.println("\nCONGRATULATIONS!!! TEAM 2 "+ team2.getNameParty()+" IS THE CHAMPION");
         }
+        cementeryToFile(cemetery);
 
+    }
 
+    public void cementeryToFile(ArrayList<Character> cemetery) throws IOException {
+        FileWriter fileWriter = new FileWriter("cementery.csv", true);
+        for(Character character: cemetery){
+            fileWriter.write(character.toString()+"\n");
+        }
+
+        fileWriter.close();
     }
 }

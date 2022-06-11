@@ -53,7 +53,7 @@ public abstract class Party {
 
     public void printParty(){
         for(Character i: this.listCharacter){
-            i.toString();
+            System.out.println(i);
         }
     }
 

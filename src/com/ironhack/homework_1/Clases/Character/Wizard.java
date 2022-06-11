@@ -57,14 +57,19 @@ public class Wizard extends Character implements Attacker {
 
     @Override
     public String toString() {
-        System.out.println("Wizard {" +
+        String wizardToPrint = "Wizard {" +
                 " ID = " + getId() +
                 ", Name = " + getName() +
                 ", HP = " + getHp() +
                 ", Mana=" + getMana() +
                 ", Intelligence=" + getIntelligence() +
-                " }");
-        return "";
+                " }";
+
+        //System.out.println(wizardToPrint);
+
+        return wizardToPrint;
     }
+
+
 }
 

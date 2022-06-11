@@ -1,0 +1,4 @@
+Wizard { ID = 1, Name = wi1, HP = 0.0, Mana=3.0, Intelligence=1.0 }
+Wizard { ID = 3, Name = wi1, HP = 0.0, Mana=3.0, Intelligence=1.0 }
+Warrior { ID = 2, Name = wa1, HP = 0.0, Stamina=1.0, Strength=1.0 } 
+Warrior { ID = 4, Name = wa2, HP = 0.0, Stamina=1.0, Strength=1.0 } 

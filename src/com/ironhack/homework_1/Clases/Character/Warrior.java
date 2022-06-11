@@ -55,13 +55,14 @@ public class Warrior extends Character implements Attacker {
 
     @Override
     public String toString() {
-        System.out.println("Warrior { " +
+        String warriorTpPrint = "Warrior { " +
                 "ID = " + getId() +
                 ", Name = " + getName() +
                 ", HP = " + getHp() +
                 ", Stamina=" + getStamina() +
                 ", Strength=" + getStrength() +
-                " } ");
-        return "";
+                " } ";
+        //System.out.println(warriorTpPrint);
+        return warriorTpPrint;
     }
 }

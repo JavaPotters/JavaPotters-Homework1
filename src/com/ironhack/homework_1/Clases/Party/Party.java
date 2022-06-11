@@ -30,7 +30,7 @@ public abstract class Party {
             this.listCharacter.add(wizard);
         }
         else {
-            System.out.println("Party llena");
+            System.out.println("Party is full");
         }
     }
 

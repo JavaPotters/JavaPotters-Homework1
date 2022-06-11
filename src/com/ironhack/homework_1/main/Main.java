@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         // Let's start!
-        System.out.println(" * * * * * * * Bienevenido al juego de roles de JavaPotters * * * * * * *\n");
+        System.out.println(" * * * * * * * Welcome to the JavaPotters Role Playing Game * * * * * * *\n");
         Scanner scanner = new Scanner(System.in);
 
         int numMemberParty;
@@ -202,7 +202,7 @@ public class Main {
             }
 
             // Team 2---------------------------------------
-            System.out.println("\nWhich player of team 2 do you want to fight? Please insert his ID number" );
+            System.out.println("Which player of team 2 do you want to fight? Please insert his ID number" );
             int id2 = scanner.nextInt();
             Character character2 = team2.getCharacter(id2);
             while (character2 == null){

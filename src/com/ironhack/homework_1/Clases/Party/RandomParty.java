@@ -18,7 +18,7 @@ public class RandomParty extends Party{
             Wizard wizard = RandomProperties.createRandomWizard();
             this.addWizard(wizard);
         }
-        System.out.println("Random party creada exitosamente");
+        System.out.println("Random party successfully created");
 
     }
 

@@ -2,7 +2,11 @@
 
 ## Proyecto de Juego 
 
-### Proyecto realizado por: Laura Zambrano, Sofia de la Fuente, Ana Bermejo y Rocío Arellano
+### Proyecto realizado por: 
+* Laura Zambrano
+* Sofia de la Fuente
+* Ana Bermejo 
+* Rocío Arellano
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
